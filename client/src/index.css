@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Brawler:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply leading-[normal] m-0;
+}
+*,
+::before,
+::after {
+  border-width: 0;
+}
+
+/*  Video Call Container Styles*/
+
+.video-call-container{
+  height: auto;
+  margin-top: 100px;
+  max-width:70% !important;
+}
+
+.font-big{
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.videos{
+  display: block;
+  position: relative;
+  height: auto;
+
+}
+.videos video{
+  transform: rotateY(180deg);
+  -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+  -moz-transform:rotateY(180deg); /* Firefox */
+  width: 100%;
+  height: auto;
+}
+
+.videos .to{
+  background-color: rgb(172, 167, 167);
+  border-radius: 15px;
+  object-fit: cover;
+  height: auto;
+  width: auto;
+  z-index: 1;
+}
+
+
+.videos .from{
+  height: auto;
+  width: 130px;
+  border-radius: 8px;
+  object-fit: cover;
+  background-color: rgb(216, 211, 211);
+  position: absolute;
+  top:10px;
+  right:20px;
+  z-index:2;
+}
+.videos .from video{
+  border-radius: 8px;
+}
+
+
+.videos .controls{
+  font-size: 2em;
+  position: absolute;
+  left:52%;
+  bottom:20px;
+  transform: translateX(-50%) ;
+}
+
+.to-info{
+  border-radius: 25px !;
+}
+
+.to-info .to-img{
+  width:70px;
+  height: 70px;
+  /* background-image: url(./assets/doctor.jpeg); */
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+.to-info .details{
+  justify-content: center;
+  font-size: 1.2em;
+}
+
+.chat-container{
+  height: calc(100% - 135px);
+  border-radius: 15px;
+  position: relative;
+}
+
+.input_msg{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 1em;
+  border-radius:50px;
+}
+
+.input_msg input{
+  border: 0 !important;
+  border-radius:50px;
+}
+
+.input_msg input:active{
+  border: 0 !important;
+
+}
+
+.point:hover{
+  cursor: pointer;
+}
+
+.message{
+  color: #f2f2f2;
+  margin: 10px;
+  width: 70%;
+  padding:8px;
+}
+
+.to{
+  background-color: red;
+  border-radius: 0px 30px 30px 30px;
+}
+
+.from{
+  background-color:brown; 
+  margin-left: auto;
+  right:0;
+  border-radius: 30px 30px 0px 30px;
+}
+
+
+/* Calling interface Styles */
+.options-container{
+  width: fit-content;
+  padding: 40px;
+}
+
+.btn{
+  text-align: center;
+  width: 100%;
+
+}
+
+.form-input{
+  border-bottom: 2px solid #333 !important;
+}
+
+.form-input:focus{
+  border: 0 0 2px 0 !important;
+  border-color: rgb(239, 52, 52) !important;
+}
+
+.form-section{
+  width:400px;
+}
+
+/* chat bot */
+
+#chat-container {
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+#messages {
+  height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+#message-form {
+  display: flex;
+  padding: 10px;
+}
+
+#message-input {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
