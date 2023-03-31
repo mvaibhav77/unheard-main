@@ -7,6 +7,7 @@ import { DoctorContext } from "../context/DoctorsContext";
 import GoogleMapLocation from "../component/GoogleMapLocation";
 import Doctor from './images/doctor.png'
 import Backarrow from './images/backarrow.png'
+import Ellipse from './images/ellipse.png'
 
 const DoctorsInfo = () => {
   const navigate = useNavigate();
@@ -139,7 +140,7 @@ useEffect(()=>{
         <img
           className="absolute top-[23px] left-[1018px] w-[38px] h-[38px]"
           alt=""
-          src="/ellipse-32.svg"
+          src={Ellipse}
         />
       </div>
       <div className="absolute top-[1041px] left-[95px] w-[1089px] h-[280px] text-black">
@@ -160,7 +161,7 @@ useEffect(()=>{
         <img
           className="absolute top-[23px] left-[1018px] w-[38px] h-[38px]"
           alt=""
-          src="/ellipse-33.svg"
+          src={Ellipse}
         />
       </div>
       <div className="absolute top-[472px] left-[386px] w-[509px] h-[122px] flex flex-col items-center justify-start gap-[12px] text-31xl">
@@ -181,7 +182,7 @@ useEffect(()=>{
         onClick={onBookContainerClick}
       >
         <div className="absolute top-[0px] left-[0px] rounded-sm bg-red-100 w-[298px] h-[58px]" />
-        <button className="absolute top-[12px] left-[68px] font-semibold" onClick={(e)=>{
+        <button className="absolute top-[12px] text-center left-[90px] bg-red-100 font-semibold" onClick={(e)=>{
           window.location.replace('/video-call');
           e.preventDefault();
         }}>

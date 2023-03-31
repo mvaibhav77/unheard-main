@@ -37,13 +37,44 @@ const ContextProvider = ({children})=>{
 
     }
 
+    const list =["Aged/Elderly",
+   "Any Other",
+    "Children",
+    "Civic Issues",
+    "Dalit Upliftment",
+    "Differently Abled",
+    "Education & Literacy",
+    "HIV/AIDS",
+    "Health & Family Welfare",
+    "Human Rights",
+    "Labour & Employment",
+    "Legal Awareness & Aid",
+    "Minority Issues",
+    "Panchayati Raj",
+    "Prisoner's Issues",
+    "Right to Information & Advocacy",
+    "Rural Development & Poverty Alleviation",
+    "Sports",
+    "Tourism",
+    "Tribal Affairs",
+    "Urban Development & Poverty Alleviation",
+    "Women's Development & Empowerment",
+    "Youth Affairs"]
+
     function displayMsg(role, message) {
-        console.log(message);
         const messages = document.getElementById("messages");
         const div = document.createElement("div");
-        div.innerHTML = `<p><b>${
-            role === "user" ? "You" : "Assistant"
-        }:</b> ${message}</p>`;
+        if(role !== "user"){
+            list.forEach((item)=>{
+                if(message.includes(item)){
+                    div.innerHTML = `<b>Assistant:</b><a href="/ngo-search-spare1?query=${item.toLowerCase()}"> ${item}</p>`;
+
+                }
+            })
+        }else{
+            div.innerHTML = `<p><b>You:</b> ${message}</p>`;
+        }
+
         messages.appendChild(div);
         messages.scrollTop = messages.scrollHeight;
     }
