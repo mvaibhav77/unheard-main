@@ -90,12 +90,12 @@ const ChatContainer = ({ dimensionsText }) => {
           <img
             className="absolute top-[7px] left-[305.57px] w-[10.29px] h-[10.79px] object-cover"
             alt=""
-            src={Icons8paperplane}
+            src={Backarrow}
           />
           <img
             className="absolute top-[6px] left-[4.12px] w-[12.35px] h-[12.35px]"
             alt=""
-            src={Backarrow}
+            src=''
           />
         </div>
       </div>

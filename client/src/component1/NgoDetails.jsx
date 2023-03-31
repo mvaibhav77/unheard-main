@@ -6,6 +6,7 @@ import FooterTextareaContainer from "../component/FooterTextareaContainer";
 import { useSearchParams } from "react-router-dom";
 import { NGOContext } from "../context/NGOContext";
 import GoogleMapLocation from "../component/GoogleMapLocation";
+import About from './images/about.png'
 
 const NgoDetails = () => {
   const navigate = useNavigate();
@@ -76,7 +77,7 @@ const NgoDetails = () => {
       <img
         className="absolute top-[102.85px] left-[419.66px] w-[810.45px] h-[698.3px]"
         alt=""
-        src="/bg-illustration1.svg"
+        src={About}
       />
       <DCyberContainer name={ngoName} works={ngoWorks} regId={ngoRegId} loc={ngoLoc}/>
       {/* <img
@@ -103,7 +104,7 @@ const NgoDetails = () => {
           </div>
         </div>
         <div
-          className="flex flex-row items-start justify-center gap-[24px] cursor-pointer text-5xl text-red-100 font-cabin"
+          className="flex flex-row items-start justify-center gap-[24px] cursor-pointer text-xl text-red-100 font-cabin"
           onClick={onNavContainerClick}
         >
           <div

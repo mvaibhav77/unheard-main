@@ -4,10 +4,11 @@ import VoiceContainer from "../component/VoiceContainer";
 import { useNavigate } from "react-router-dom";
 import MessageContainer from "../component/MessageContainer";
 import Plus from "./images/plus.png"
-import Icons8paperplane from "./images/icons8paperplane.png"
+import Landpic from "./images/landpic.png"
 import Backarrow from "./images/backarrow.png"
 import { SocketContext } from "../context/ChatContext.js";
 import '../index.css'
+import Ellipse from'./images/ellipse.png'
 
 const ChatInterface1 = ({type}) => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const ChatInterface1 = ({type}) => {
         <img
           className="absolute top-[55px] left-[845px] w-[586px] h-[701px] object-cover"
           alt=""
-          src={Backarrow}
+          src={Landpic}
         />
         <div className="absolute top-[583px] left-[0px] w-[420px] h-[53px]">
           <textarea className="[border:none] bg-[transparent] font-semibold font-montserrat text-5xl absolute top-[0px] left-[211px] w-[209px] h-[53px]" />
@@ -86,7 +87,7 @@ const ChatInterface1 = ({type}) => {
             <img
               className="absolute top-[9.6px] left-[-0.61px] w-[30.14px] h-[27.4px] cursor-pointer"
               alt=""
-              src="/back-arrow1.svg"
+              src={Backarrow}
               onClick={onBackArrowIconClick}
             />
             <div className="absolute top-[0px] left-[53px] font-semibold">
@@ -120,19 +121,19 @@ const ChatInterface1 = ({type}) => {
           />
           <div className="absolute top-[17px] left-[74px] font-semibold">
             lorem ipsum arpuk lsmshfk itdysl hcagjfak.
-          </div>
+          </div> */
           <img
             className="absolute top-[16px] left-[1001px] w-7 h-7 object-cover"
             alt=""
-            src={Icons8paperplane}
+            src={Ellipse}
           />
-          <div className="absolute top-[10px] left-[13px] rounded-6xl bg-lavenderblush-100 [backdrop-filter:blur(4px)] w-[35px] h-[35px]" />
+        /*<div className="absolute top-[10px] left-[13px] rounded-6xl bg-lavenderblush-100 [backdrop-filter:blur(4px)] w-[35px] h-[35px]" />
           <img
             className="absolute top-[13px] left-[17px] w-7 h-7"
             alt=""
             src={Plus}
           />
-        </div> */}
+        </div> 
         {/* <div className="absolute top-[464px] left-[1037px] rounded-mini bg-pink-300 w-[9px] h-[130px]" /> */}
       </div>
 

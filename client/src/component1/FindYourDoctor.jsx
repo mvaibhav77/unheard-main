@@ -82,6 +82,7 @@ const FindYourDoctor = () => {
         type="loc"
         forType="doctor"
       />
+      
       <DoctorListContainer
         onRectangle6Click={onRectangle6Click}
         onRectangle7Click={onRectangle7Click}

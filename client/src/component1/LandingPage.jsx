@@ -16,8 +16,7 @@ const LandingPage = () => {
         className="absolute top-[95px] left-[785px] w-[465px] h-[675px]"
         alt=""
         src={Landpic}
-      />
-      <FooterTextareaContainer1 />
+      /><FooterTextareaContainer1 />
       <div
         className="absolute top-[3849.59px] left-[6px] w-[1043px] h-[494px] flex flex-col pt-[9px] px-0 pb-0 box-border items-start justify-start gap-[51px]"
         data-scroll-to="land5Container"
@@ -32,8 +31,8 @@ const LandingPage = () => {
           <div className="relative rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 border-[0.8px] border-solid border-red-100" />
         </div>
       </div>
-      {/* <HealthSupportContainer />
-      <HelpSupportContainer /> */}
+      <HealthSupportContainer />
+      <HelpSupportContainer /> 
       <AboutUnheardContainer />
       <div
         className="absolute top-[21px] left-[61px] w-[1402px] h-[725px]"

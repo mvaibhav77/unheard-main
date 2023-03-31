@@ -1,4 +1,5 @@
 import React from "react";
+import Ellipse from './images/ellipse.png';
 const UnheardContainer = () => {
     return (
       <div className="absolute top-[150px] left-[121px] w-[1037px] h-[1098px] text-center text-33xl text-gray-300 font-montserrat">
@@ -43,7 +44,7 @@ const UnheardContainer = () => {
         <img
           className="absolute top-[26px] left-[948px] w-[38px] h-[38px]"
           alt=""
-          src="/ellipse-3.svg"
+          src={Ellipse}
         />
       </div>
     );

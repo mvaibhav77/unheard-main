@@ -1,6 +1,7 @@
 import React from "react";
 import { useMemo } from "react";
 import { TextField } from "@mui/material";
+import Background from './images/background.png';
 
 const TextareaContainer = ({
   propPosition,
@@ -35,14 +36,14 @@ const TextareaContainer = ({
       <img
         className="absolute top-[0px] left-[0px] w-[1280px] h-[528px]"
         alt=""
-        src="/background1.svg"
+        src={Background}
       />
       <div className="absolute top-[39px] left-[71px] w-[265px] h-[85.06px]">
         <div className="absolute top-[0px] left-[55px] font-semibold">h</div>
-        {/* <div className="absolute top-[calc(50%_-_42.5px)] left-[calc(50%_-_132.5px)] font-semibold text-red-100">
+        {<div className="absolute top-[calc(50%_-_42.5px)] left-[calc(50%_-_132.5px)] font-semibold text-red-100">
           <span>Un</span>
           <span className="text-gray-300">eard</span>
-        </div> */}
+        </div> }
       </div>
       <div
         className="absolute top-[141px] left-[71px] flex flex-col items-start justify-center gap-[12px] cursor-pointer text-9xl text-red-100 font-cabin"

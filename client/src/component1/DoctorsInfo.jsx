@@ -5,6 +5,8 @@ import FooterTextareaContainer2 from "../component/FooterTextareaContainer2";
 import { useSearchParams } from "react-router-dom";
 import { DoctorContext } from "../context/DoctorsContext";
 import GoogleMapLocation from "../component/GoogleMapLocation";
+import Doctor from './images/doctor.png'
+import Backarrow from './images/backarrow.png'
 
 const DoctorsInfo = () => {
   const navigate = useNavigate();
@@ -165,11 +167,11 @@ useEffect(()=>{
         <div className="relative font-semibold">{docName}</div>
         <div className="relative text-21xl">{docDegree}</div>
       </div>
-      {/* <img
+      { <img
         className="absolute top-[1365px] left-[126px] w-[1027px] h-[770px] object-cover"
         alt=""
-        src="/image-4@2x.png"
-      /> */}
+        src={Doctor}
+      /> }
       <div className="absolute top-[1365px] left-[126px] w-[1027px] h-[770px] object-cover">
           <GoogleMapLocation location={docLocation}/>
       </div>
@@ -189,18 +191,18 @@ useEffect(()=>{
       <img
         className="absolute top-[138.6px] left-[94.74px] w-[35.68px] h-[32.4px] cursor-pointer"
         alt=""
-        src="/back-arrow3.svg"
+        src={Backarrow}
         onClick={onBackArrowIconClick}
       />
       <img
-        className="absolute top-[119px] left-[488px] w-[302px] h-[305px] object-cover"
-        alt=""
-        src="/doc-img@2x.png"
-      />
-      <img
+      //className="absolute top-[119px] left-[488px] w-[302px] h-[305px] object-cover"
+      //  alt=""
+       // src="/doc-img@2x.png"
+      ///
+      
         className="absolute top-[119px] left-[489px] w-[302px] h-[305px]"
         alt=""
-        src="/doc-img1.svg"
+        src={Doctor}
       />
     </div>
   );
