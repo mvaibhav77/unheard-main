@@ -32,8 +32,10 @@ const AboutUnheardContainer = () => {
         />
         <div className="absolute top-[58px] left-[572px] w-[578px] h-[299px]">
           <div className="absolute top-[0px] left-[0px] w-[578px] h-[198px]">
-            <div className="absolute top-[111px] left-[0px] font-medium flex items-center w-[541.58px]">{`Lorem ipsum dolor sit amet. Est voluptatem culpa ut iste voluptas aut dolore repudiandae. Non similique totam `}</div>
-            <div className="absolute top-[0px] left-[0px] font-medium flex items-center w-[578px]">{`Lorem ipsum dolor sit amet. Est voluptatem culpa ut iste voluptas aut dolore repudiandae. Non similique totam `}</div>
+            <div className="absolute top-[111px] left-[0px] font-medium flex items-center w-[541.58px]">{` `}</div>
+            <div className="absolute top-[0px] left-[0px] font-medium flex items-center w-[578px]">{`
+Unheard is a platform dedicated to providing health and support to women in need. The platform aims to connect women with relevant NGOs and doctors based on their specific problem descriptions. We aim to make healthcare and NGO support easily accessible and free for those who need it the most.
+ `}</div>
           </div>
           <div
             className="absolute top-[246px] left-[0px] w-[200.33px] h-[53px] cursor-pointer text-center text-white"

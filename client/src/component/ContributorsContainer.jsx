@@ -1,4 +1,9 @@
 import React from "react";
+import Shashwat from './images/shashwat.jpg'
+import Poorva from './images/poorva.jpg'
+import Dhruv from './images/dhruv.jpg'
+import Vaibhav from './images/vaibhav.jpg'
+
 
 const ContributorsContainer = () => {
     return (
@@ -12,22 +17,22 @@ const ContributorsContainer = () => {
           <img
             className="relative w-[175px] h-[175px] shrink-0"
             alt=""
-            src="/ellipse-6.svg"
+            src={Vaibhav}
           />
           <img
             className="relative w-[175px] h-[175px] shrink-0"
             alt=""
-            src="/ellipse-6.svg"
+            src={Shashwat}
           />
           <img
             className="relative w-[175px] h-[175px] shrink-0"
             alt=""
-            src="/ellipse-6.svg"
+            src={Poorva}
           />
           <img
             className="relative w-[175px] h-[175px] shrink-0"
             alt=""
-            src="/ellipse-6.svg"
+            src={Dhruv}
           />
         </div>
       </div>
