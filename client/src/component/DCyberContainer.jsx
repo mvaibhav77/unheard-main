@@ -1,6 +1,8 @@
 import React from "react";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import Backarrow from './images/backarrow.png';
+import Ellipse from './images/ellipse.png';
 
 const DCyberContainer = ({name,regId,works,loc}) => {
   const navigate = useNavigate();
@@ -18,14 +20,14 @@ const DCyberContainer = ({name,regId,works,loc}) => {
         <div className="absolute top-[73px] left-[1px] w-[832px] h-[492px]">
           <div className="absolute top-[0px] left-[0px] w-[831px] h-[233px] flex flex-col items-start justify-start gap-[7px]">
             <div className="relative font-semibold">Works in</div>
-            <div className="rounded-tl-none rounded-tr-11xl rounded-b-11xl bg-lavenderblush-200 w-[831px] h-[197px] shrink-0 flex flex-col items-center justify-center text-xl">
+            <div className="rounded-tl-none rounded-tr-11xl rounded-b-11xl bg-lavenderblush-200 w-[831px] h-[197px] shrink-0 flex flex-col items-center justify-center text-sm">
               <div className="relative font-semibold inline-block w-[761px] h-[155px] shrink-0">{works}</div>
             </div>
           </div>
           <div className="absolute top-[260px] left-[0px] w-[832px] h-[95px]">
             <div className="absolute top-[0px] left-[0px] font-semibold">{`Registration ID `}</div>
             <div className="absolute top-[36px] left-[0px] rounded-tl-none rounded-tr-11xl rounded-b-11xl bg-lavenderblush-200 w-[831px] h-[59px]" />
-            <div className="absolute top-[43px] left-[25px] w-[457px] h-11 flex flex-col py-0 px-[5px] box-border items-start justify-center text-xl">
+            <div className="absolute top-[43px] left-[25px] w-[457px] h-11 flex flex-col py-0 px-[5px] box-border items-start justify-center text-sm">
               <div className="relative font-semibold">
                 {regId}
               </div>
@@ -36,16 +38,16 @@ const DCyberContainer = ({name,regId,works,loc}) => {
               Location
             </div>
             <div className="absolute top-[36px] left-[0px] rounded-tl-none rounded-tr-11xl rounded-b-11xl bg-lavenderblush-200 w-[831px] h-[77px]" />
-            <div className="absolute top-[49px] left-[27px] text-xl font-semibold">
+            <div className="absolute top-[49px] left-[27px] text-sm font-semibold">
               <p className="[margin-block-start:0] [margin-block-end:2px]">{loc}</p>
             </div>
           </div>
         </div>
-        <div className="absolute top-[-7px] left-[0px] flex flex-row items-center justify-start gap-[34px] text-center text-31xl text-red-100">
+        <div className="absolute top-[-7px] left-[0px] flex flex-row items-center justify-start gap-[34px] text-center text-xl text-red-100">
           <img
             className="relative w-[35.68px] h-[32.4px] shrink-0 cursor-pointer"
             alt=""
-            src="/back-arrow2.svg"
+            src={Backarrow}
             onClick={onBackArrowIconClick}
           />
           <div className="relative font-semibold">{name}</div>
@@ -54,7 +56,7 @@ const DCyberContainer = ({name,regId,works,loc}) => {
       <img
         className="absolute top-[26px] left-[948px] w-[38px] h-[38px]"
         alt=""
-        src="/ellipse-31.svg"
+        src={Ellipse}
       />
     </div>
   );

@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 import SearchContainer from "../component/SearchContainer";
 import TextareaContainer from "../component/TextareaContainer";
 import { NGOContext } from "../context/NGOContext";
+import FooterContainer from "../component/FooterContainer";
 
 
+<FooterContainer />
 const NgoSearch = () => {
   const navigate = useNavigate();
 
@@ -75,22 +77,26 @@ const NgoSearch = () => {
         forType='ngo'
         type='sector'
       />
+      
+      
       <div className="w-[1043px] h-[479px] shrink-0 flex flex-col items-start justify-start gap-[52px]">
         <div className="relative font-semibold">
           <span>{`Listed `}</span>
           <span className="text-gray-300">NGO’s-</span>
           <span>{` `}</span>
         </div>
+        
         <div
           className="w-[1043px] h-[349px] shrink-0 flex flex-row items-center justify-start gap-[52px] cursor-pointer"
         >
           {randomThreeNgo && randomThreeNgo.map((ngo)=>{
             return (
               <div
-            className="relative rounded-lg bg-lightpink text-xl[backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 cursor-pointer border-[0.8px] border-solid border-red-100"
+            className="relative rounded-lg bg-lightpink  flex justify-center text-xl box-border w-[313.8px] h-[349.8px] shrink-0 cursor-pointer border-[0.8px] border-solid border-red-100"
             onClick={()=>{
               window.location.replace('/ngo-details?id='+ngo.id)
             }}
+            
             key={ngo.id}
 
           >
@@ -102,6 +108,7 @@ const NgoSearch = () => {
         </div>
       </div>
       <TextareaContainer onFrameContainerClick={onFrameContainerClick} />
+      
     </div>
   );
 };

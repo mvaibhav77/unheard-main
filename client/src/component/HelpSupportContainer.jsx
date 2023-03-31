@@ -2,6 +2,7 @@ import React from "react";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Handshelp from './images/handshelp.png';
+import Ngo from './images/ngo.png'
 
 const HelpSupportContainer = () => {
   const navigate = useNavigate();
@@ -27,19 +28,25 @@ const HelpSupportContainer = () => {
       className="absolute top-[1546.79px] left-[61px] w-[1224px] h-[977.79px] text-left text-5xl text-white font-montserrat"
       data-scroll-to="land3Container"
     >
-      <div className="absolute top-[628.79px] left-[0px] w-[1043px] h-[349px]">
-        <div
-          className="absolute top-[-0.4px] left-[-0.4px] rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] cursor-pointer border-[0.8px] border-solid border-red-100"
+      <div className="absolute top-[628.79px] left-[100px] w-[1043px] h-[349px]">
+      <img
+          className="relative w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
+            alt=""
+          src = {Ngo}
           onClick={onRectangle9Click}
-        />
-        <div
-          className="absolute top-[-0.4px] left-[729.6px] rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] cursor-pointer border-[0.8px] border-solid border-red-100"
-          onClick={onRectangle10Click}
-        />
-        <div
-          className="absolute top-[-0.4px] left-[364.6px] rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] cursor-pointer border-[0.8px] border-solid border-red-100"
-          onClick={onRectangle11Click}
-        />
+          />
+         <img
+          className="relative w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
+            alt=""
+          src = {Ngo}
+          onClick={onRectangle9Click}
+          />
+         <img
+          className="relative w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
+            alt=""
+          src = {Ngo}
+          onClick={onRectangle9Click}
+          />
       </div>
       <div className="absolute top-[127.79px] left-[0px] w-[660px] h-[324px] text-center">
         <div

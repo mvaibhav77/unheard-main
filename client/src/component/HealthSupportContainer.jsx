@@ -2,6 +2,8 @@ import React from "react";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import Handshealth from './images/handshealth.png';
+import FooterContainer from "./FooterContainer";
+import Doctor from './images/doctor.png'
 
 const HealthSupportContainer = () => {
   const navigate = useNavigate();
@@ -33,17 +35,23 @@ const HealthSupportContainer = () => {
           <span className="text-red-100">{` Doctors - `}</span>
         </div>
         <div className="w-[1043px] h-[349px] shrink-0 flex flex-row items-center justify-start gap-[52px]">
-          <div
-            className="relative rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 cursor-pointer border-[0.8px] border-solid border-red-100"
-            onClick={onRectangle5Click}
+        <img
+          className="relative w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
+            alt=""
+          src = {Doctor}
+          onClick={onRectangle6Click}
           />
-          <div
-            className="relative rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 cursor-pointer border-[0.8px] border-solid border-red-100"
-            onClick={onRectangle6Click}
+          <img
+          className="relative w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
+            alt=""
+          src = {Doctor}
+          onClick={onRectangle6Click}
           />
-          <div
-            className="relative rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 cursor-pointer border-[0.8px] border-solid border-red-100"
-            onClick={onRectangle7Click}
+          <img
+          className="relative w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
+            alt=""
+          src = {Doctor}
+          onClick={onRectangle6Click}
           />
         </div>
       </div>
@@ -73,6 +81,7 @@ const HealthSupportContainer = () => {
         <span>Health</span>
         <span className="text-gray-300"> Support</span>
       </div>
+     
     </div>
   );
 };

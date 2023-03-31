@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
+import { Rectangle } from "@react-google-maps/api";
+import Rectangle1  from "./images/rectangle1.png";
 
 
 const SearchContainer = ({
@@ -152,7 +154,7 @@ useEffect(()=>{
         <img
           className="absolute top-[53px] left-[0px] w-[51px] h-3.5"
           alt=""
-          src="/rectangle-40.svg"
+          src={Rectangle1}
         />
         <div
           className="absolute top-[53px] left-[0px] rounded-t-none rounded-br-none rounded-bl-sm bg-red-100 w-[13px] h-[50px]"
@@ -181,7 +183,7 @@ useEffect(()=>{
           <img
             className="absolute top-[0px] left-[0px] rounded-3041xl w-[221px] h-[69px]"
             alt=""
-            src="/rectangle-43.svg"
+            src={Rectangle1}
           />
           <button type="submit" onClick={(e)=> handleSubmit(e)} className="absolute top-[25px] left-[67px] font-medium flex items-center w-[87px] h-[19px]">
             Search

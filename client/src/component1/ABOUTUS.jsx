@@ -5,6 +5,7 @@ import UnheardContainer from "../component/UnheardContainer";
 import FooterTextareaContainer from "../component/FooterTextareaContainer";
 import ContributorsContainer from "../component/ContributorsContainer";
 import About from './images/about.png'
+import Ellipse from './images/ellipse.png'
 
 const ABOUTUS = () => {
   const navigate = useNavigate();
@@ -30,11 +31,7 @@ const ABOUTUS = () => {
 
   return (
     <div className="relative bg-gray-100 w-full h-[2308px] overflow-hidden text-center text-25xl text-gray-300 font-montserrat">
-      <img
-        className="absolute top-[102.85px] left-[419.66px] w-[810.45px] h-[698.3px]"
-        alt=""
-        src=''
-      />
+      
       <UnheardContainer />
       <img
         className="absolute top-[1329px] left-[1069px] w-[38px] h-[38px]"
@@ -78,7 +75,7 @@ const ABOUTUS = () => {
       <img
         className="absolute top-[1318px] left-[1069px] w-[38px] h-[38px]"
         alt=""
-        src={About}
+        src={Ellipse}
       />
     </div>
   );

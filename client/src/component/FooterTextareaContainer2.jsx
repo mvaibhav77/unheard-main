@@ -2,6 +2,8 @@ import React from "react";
 import { useCallback } from "react";
 import ContactForm from "./ContactForm";
 import { useNavigate } from "react-router-dom";
+import Background from'./images/background.png'
+
 
 const FooterTextareaContainer2 = () => {
   const navigate = useNavigate();
@@ -15,7 +17,7 @@ const FooterTextareaContainer2 = () => {
       <img
         className="absolute top-[0px] left-[0px] w-[1280px] h-[528px]"
         alt=""
-        src="/background1.svg"
+        src={Background}
       />
       <div className="absolute top-[39px] left-[71px] w-[265px] h-[85.06px] text-gray-300">
         <div className="absolute top-[0px] left-[55.06px] font-semibold">h</div>
