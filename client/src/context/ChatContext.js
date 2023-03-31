@@ -2,7 +2,7 @@ import { io } from 'socket.io-client';
 import { createContext, useEffect, useState } from 'react';
 
 const  SocketContext = createContext();
-const socket = io('http://localhost:5000');
+const socket = io('https://unheard-backend-2igb.onrender.com');
 
 
 
