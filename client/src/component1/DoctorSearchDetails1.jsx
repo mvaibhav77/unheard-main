@@ -1,9 +1,12 @@
 import React from "react";
-import { useCallback } from "react";
+import { useCallback, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import SearchResultDisplay from "../component/SearchResultDisplay";
 import ContainerHeader from "../component/ContainerHeader";
 import TextareaContainer from "../component/TextareaContainer"
+import { DoctorContext } from "../context/DoctorsContext";
+import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
+import SearchResultDisplay from "../component/SearchResultDisplay";
 
 const DoctorSearchDetails1 = () => {
   const navigate = useNavigate();
@@ -45,12 +48,25 @@ const DoctorSearchDetails1 = () => {
     navigate("/");
   }, [navigate]);
 
+  const {getLocationResults,
+    getServiceResults,
+    setServiceSearched,
+    setLocationSearched,
+    serviceSearched,
+    locationSearched,} = useContext(DoctorContext);
+
+    
+    const [searchParam, setSearchParam] = useSearchParams();
+  const [query, setQuery] = useState(searchParam.get('query'));
+  console.log(query);
+
+  useEffect(()=>{
+    getLocationResults(query);
+    console.log(locationSearched);
+  },[])
+
   return (
     <div className="relative bg-white w-full h-[1681px] overflow-hidden text-left text-7xl text-black font-montserrat">
-      <SearchResultDisplay onCtaClick={onCtaClick} onCta1Click={onCta1Click} />
-      <div className="absolute top-[412px] left-[99px] font-medium flex items-center w-[371px] h-[23px]">
-        Displaying 2 search result
-      </div>
       <ContainerHeader
         helpSupportCursor="pointer"
         contactUsBackgroundColor="#d70908"
@@ -63,8 +79,22 @@ const DoctorSearchDetails1 = () => {
         onHomeTextClick={onHomeTextClick}
         onAboutUsTextClick={onAboutUsTextClick}
         onHelpSupportTextClick={onHelpSupportTextClick}
-        onContactUsTextClick={onContactUsTextClick}
+        onContactUsTextClick={onContactUsTextClick} 
+        type={'loc'}
       />
+      <div className="absolute top-[475px] left-[99px] w-[884px] h-[608px] flex flex-col items-center justify-start gap-[44px] text-left text-5xl text-black font-montserrat">
+      {locationSearched.length ? locationSearched.map(doc=>{
+              return (
+                <SearchResultDisplay name={doc.Name} practicing={doc.Practicing} degree={doc.Degree} address={doc.Address_1} id={doc.id}/>
+              )
+            }): (
+                <div>
+                  No result found
+                </div>
+              )
+            }
+        </div>
+
       <TextareaContainer
         propPosition="absolute"
         propFlexShrink="unset"

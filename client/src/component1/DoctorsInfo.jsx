@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import FooterTextareaContainer2 from "../component/FooterTextareaContainer2";
+import { useSearchParams } from "react-router-dom";
+import { DoctorContext } from "../context/DoctorsContext";
+import GoogleMapLocation from "../component/GoogleMapLocation";
 
 const DoctorsInfo = () => {
   const navigate = useNavigate();
@@ -32,6 +35,49 @@ const DoctorsInfo = () => {
   const onBackArrowIconClick = useCallback(() => {
     navigate("/doctors-search-details");
   }, [navigate]);
+
+const {
+  getLocationResults,
+  getServiceResults,
+  result,
+  setServiceSearched,
+  setLocationSearched,
+  serviceSearched,
+  locationSearched,
+  getDoctorDetail
+} = useContext(DoctorContext);
+const [searchParam, setSearchParam] = useSearchParams();
+const [docName, setDocName]= useState('');
+const [docLocation, setDocLocation]= useState('');
+const [docPracticing, setDocPracticing]= useState('');
+const [docDegree, setDocDegree]= useState('');
+const [docPhone, setDocPhone]= useState('');
+const [docPracticingSince, setDocPracticingSince]= useState('');
+
+
+
+
+useEffect(()=>{
+  const query = searchParam.get('id');
+    console.log(query)
+    getDoctorDetail(query);
+},[])
+
+useEffect(()=>{
+  if(result[0]){
+    const res= result[0];
+    setDocName(res.Name);
+    setDocLocation(res['Address 1']);
+    setDocPracticing(res.Practicing);
+    setDocDegree(res.Degree);
+    setDocPhone(res['Phone Number']);
+    setDocPracticingSince(res['Practicing Since'])
+
+  }
+
+},[result])
+
+
 
   return (
     <div className="relative bg-lavenderblush-200 w-full h-[2733px] overflow-hidden text-left text-5xl text-red-100 font-montserrat">
@@ -77,14 +123,12 @@ const DoctorsInfo = () => {
           <span className="[line-break:anywhere] w-full">
             <p className="[margin-block-start:0] [margin-block-end:5px]">
               <span className="text-black">{`In practice since `}</span>
-              <span className="text-red-100">2006</span>
-              <span>, as a Consultant.</span>
+              <span className="text-red-100">{docPracticingSince}</span>
             </p>
             <p className="[margin-block-start:0] [margin-block-end:5px]">
-              Address : Indo Vietnam Medical Board, B-121, Second Floor, Green
-              Fields Colony, Greenfields, Sector 42, Faridabad, Haryana-121003
+              Address : {docLocation}
             </p>
-            <p className="m-0">Phone number : 0129-2510534</p>
+            <p className="m-0">Phone number : {docPhone}</p>
           </span>
         </div>
         <div className="absolute top-[36px] left-[83px] text-31xl font-medium text-gray-300 flex items-center w-[257px] h-[75px]">
@@ -101,13 +145,11 @@ const DoctorsInfo = () => {
         <div className="absolute top-[119px] left-[83px] tracking-[-0.01em] font-medium flex items-center w-[906px]">
           <span className="[line-break:anywhere] w-full">
             <p className="[margin-block-start:0] [margin-block-end:5px]">
-              Area of practice: Dietician
+              Area of practice: {docPracticing}
             </p>
             <p className="[margin-block-start:0] [margin-block-end:5px]">
-              Degree : Post Graduation in Diabetes Education from International
-              Diabetes Federation, Belgium, PhD
+              Degree : {docDegree}
             </p>
-            <p className="m-0">Faridabad, Haryana, India</p>
           </span>
         </div>
         <div className="absolute top-[36px] left-[83px] text-31xl font-medium flex items-center w-[257px] h-[75px]">
@@ -120,23 +162,29 @@ const DoctorsInfo = () => {
         />
       </div>
       <div className="absolute top-[472px] left-[386px] w-[509px] h-[122px] flex flex-col items-center justify-start gap-[12px] text-31xl">
-        <div className="relative font-semibold">{`Dr. Ashok Kumar `}</div>
-        <div className="relative text-21xl">{`Gynaecologist MBBS, MD `}</div>
+        <div className="relative font-semibold">{docName}</div>
+        <div className="relative text-21xl">{docDegree}</div>
       </div>
-      <img
+      {/* <img
         className="absolute top-[1365px] left-[126px] w-[1027px] h-[770px] object-cover"
         alt=""
         src="/image-4@2x.png"
-      />
+      /> */}
+      <div className="absolute top-[1365px] left-[126px] w-[1027px] h-[770px] object-cover">
+          <GoogleMapLocation location={docLocation}/>
+      </div>
       <FooterTextareaContainer2 />
       <div
         className="absolute top-[626px] left-[491px] w-[298px] h-[58px] cursor-pointer text-center text-9xl text-white"
         onClick={onBookContainerClick}
       >
         <div className="absolute top-[0px] left-[0px] rounded-sm bg-red-100 w-[298px] h-[58px]" />
-        <div className="absolute top-[12px] left-[68px] font-semibold">
+        <button className="absolute top-[12px] left-[68px] font-semibold" onClick={(e)=>{
+          window.location.replace('/video-call');
+          e.preventDefault();
+        }}>
           Book a Call
-        </div>
+        </button>
       </div>
       <img
         className="absolute top-[138.6px] left-[94.74px] w-[35.68px] h-[32.4px] cursor-pointer"

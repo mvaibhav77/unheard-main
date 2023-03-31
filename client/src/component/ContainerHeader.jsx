@@ -1,7 +1,8 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import React from "react";
 import { DoctorContext } from "../context/DoctorsContext";
-import { useCallback, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const ContainerHeader = ({
   helpSupportCursor,
@@ -16,6 +17,7 @@ const ContainerHeader = ({
   onAboutUsTextClick,
   onHelpSupportTextClick,
   onContactUsTextClick,
+  type
 }) => {
   const rectangleDivStyle = useMemo(() => {
     return {
@@ -63,27 +65,51 @@ const ContainerHeader = ({
     locationSearched,} = useContext(DoctorContext);
 
 
+    const [searchParam, setSearchParam] = useSearchParams();
+    const [query, setQuery] = useState(searchParam.get('query'));
+    console.log(query)
+
     const putResult = ()=>{
+      console.log(searchParam.get('query'))
+      // getLocationResults(searchParam.get('query'));
+      // console.log(result);
       console.log(document.getElementById('resultBody'))
       document.getElementById('resultBody').innerHTML=  `
       Name: ${result[0].Name} <br>
       Location: ${result[0].State} <br>
-      Speciality: ${result[0].Speciality}
-    `;
-
+      Speciality: ${result[0].Speciality}`
     }
 
     useEffect(()=>{
-      getLocationResults('Rewa');
-      console.log(result);
+      // getLocationResults(searchParam.get('query'));
+      // console.log(result);
+      if(type==='loc'){
+        console.log('location');
+      }else{
+        console.log('service')
+      }
     },[])
 
+
+    const handleChange = (e)=>{
+      const newQuery = e.target.value;
+      setQuery(newQuery);
+      setSearchParam({
+        query: newQuery,
+      })
+    }
+
+    const handleSubmit = (e)=>{
+      // putResult(input);
+      window.location.replace(window.location.href);
+      e.preventDefault();
+    }
 
 
   return (
     <div className="absolute top-[-0.4px] left-[2.6px] bg-lightpink [backdrop-filter:blur(4px)] box-border w-[1280.8px] h-[342.8px] text-center text-mid text-white font-montserrat border-[0.8px] border-solid border-red-100">
       <form className="absolute top-[149px] left-[173px] w-[933px] h-[147px] text-left">
-        <input type='text' name="query" className="absolute top-[53px] left-[0px] rounded-3041xl box-border w-[607px] h-[94px] border-[15px] border-solid border-red-100 bg-white w-[607px] h-[94px]"
+        <input type='text' value={query} onChange={(e)=>handleChange(e)}  className="absolute top-[53px] left-[0px] rounded-3041xl box-border w-[607px] h-[94px] border-[15px] border-solid border-red-100 bg-white w-[607px] h-[94px]"
         />
         <div
           className="absolute top-[0px] left-[0px] rounded-tl-11xl rounded-tr-none rounded-b-none bg-white w-[214px] h-[53px]"
@@ -119,16 +145,12 @@ const ContainerHeader = ({
             alt=""
             src="/rectangle-40.svg"
           />
-          <button type="submit" onClick={(e)=>{
-            putResult();
-            e.preventDefault();
-          }} className="absolute top-[25px] left-[67px] font-medium flex items-center w-[87px] h-[19px]">
+          <button type="submit" onClick={(e)=> handleSubmit(e)} className="absolute top-[25px] left-[67px] font-medium flex items-center w-[87px] h-[19px]">
             Search
           </button>
         </div>
 
       <div id="resultBody" className="absolute top-[265px] left-[67px] text-black text-5xl">
-
       </div>
 
 

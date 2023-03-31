@@ -32,8 +32,8 @@ const LandingPage = () => {
           <div className="relative rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 border-[0.8px] border-solid border-red-100" />
         </div>
       </div>
-      <HealthSupportContainer />
-      <HelpSupportContainer />
+      {/* <HealthSupportContainer />
+      <HelpSupportContainer /> */}
       <AboutUnheardContainer />
       <div
         className="absolute top-[21px] left-[61px] w-[1402px] h-[725px]"

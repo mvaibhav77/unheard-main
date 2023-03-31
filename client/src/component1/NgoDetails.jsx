@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import DCyberContainer from "../component/DCyberContainer";
 import FooterTextareaContainer from "../component/FooterTextareaContainer";
+import { useSearchParams } from "react-router-dom";
+import { NGOContext } from "../context/NGOContext";
+import GoogleMapLocation from "../component/GoogleMapLocation";
 
 const NgoDetails = () => {
   const navigate = useNavigate();
@@ -34,6 +37,40 @@ const NgoDetails = () => {
     }
   }, []);
 
+
+  const {getSectorResults,
+    result,
+    setSectorSearched,
+    setNameSearched,
+    sectorSearched,
+    nameSearched, searchedNgo, getNGODetail} = useContext(NGOContext);
+
+  const [searchParam, setSearchParam] = useSearchParams();
+  const [ngoName, setNgoName] = useState('');
+  const [ngoWorks, setNgoWorks] = useState(''); 
+  const [ngoRegId, setNgoRegId] = useState(''); 
+  const [ngoLoc, setNgoLoc] = useState(''); 
+
+
+  useEffect(()=>{
+    const query = searchParam.get('id');
+    console.log(query)
+    getNGODetail(query);
+  },[])
+
+  useEffect(()=>{
+    if(searchedNgo[0]){
+      console.log(searchedNgo[0]);
+      setNgoName(searchedNgo[0].ngo_name);
+      setNgoLoc(searchedNgo[0].location);
+      setNgoRegId(searchedNgo[0].reg_no);
+      setNgoWorks(searchedNgo[0].sector);
+    }
+
+  },[searchedNgo])
+
+
+
   return (
     <div className="relative bg-lavenderblush-200 w-full h-[2141px] overflow-hidden text-center text-25xl text-gray-300 font-montserrat">
       <img
@@ -41,12 +78,16 @@ const NgoDetails = () => {
         alt=""
         src="/bg-illustration1.svg"
       />
-      <DCyberContainer />
-      <img
+      <DCyberContainer name={ngoName} works={ngoWorks} regId={ngoRegId} loc={ngoLoc}/>
+      {/* <img
         className="absolute top-[824px] left-[155px] rounded-t-none rounded-b-11xl w-[970px] h-[728px] object-cover"
         alt=""
         src="/basemap-image@2x.png"
-      />
+      /> */}
+      <div className="absolute top-[824px] left-[155px] rounded-t-none rounded-b-11xl w-[970px] h-[728px] object-cover">
+          <GoogleMapLocation location={ngoLoc}/>
+      </div>
+
       <FooterTextareaContainer
         sendTop="1613px"
         onFrameContainer1Click={onFrameContainer4Click}

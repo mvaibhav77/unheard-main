@@ -1,8 +1,10 @@
 import { useCallback } from "react";
-import React from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import SearchContainer from "../component/SearchContainer";
 import TextareaContainer from "../component/TextareaContainer";
+import { NGOContext } from "../context/NGOContext";
+
 
 const NgoSearch = () => {
   const navigate = useNavigate();
@@ -52,6 +54,13 @@ const NgoSearch = () => {
     navigate("/ngo-details");
   }, [navigate]);
 
+  const {getRandomThreeNgo,randomThreeNgo,} = useContext(NGOContext);
+
+  useEffect(()=>{
+    getRandomThreeNgo();
+  },[randomThreeNgo])
+
+
   return (
     <div className="relative bg-white w-full h-[1517px] overflow-hidden flex flex-col items-center justify-start gap-[84px] text-left text-45xl text-red-100 font-montserrat">
       <SearchContainer
@@ -63,6 +72,8 @@ const NgoSearch = () => {
         onAboutUsTextClick={onAboutUsTextClick}
         onHealthSupportTextClick={onHealthSupportTextClick}
         onContactUsTextClick={onContactUsTextClick}
+        forType='ngo'
+        type='sector'
       />
       <div className="w-[1043px] h-[479px] shrink-0 flex flex-col items-start justify-start gap-[52px]">
         <div className="relative font-semibold">
@@ -72,17 +83,22 @@ const NgoSearch = () => {
         </div>
         <div
           className="w-[1043px] h-[349px] shrink-0 flex flex-row items-center justify-start gap-[52px] cursor-pointer"
-          onClick={onFeaturesContainerClick}
         >
-          <div
-            className="relative rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 cursor-pointer border-[0.8px] border-solid border-red-100"
-            onClick={onRectangle6Click}
-          />
-          <div
-            className="relative rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 cursor-pointer border-[0.8px] border-solid border-red-100"
-            onClick={onRectangle7Click}
-          />
-          <div className="relative rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 border-[0.8px] border-solid border-red-100" />
+          {randomThreeNgo && randomThreeNgo.map((ngo)=>{
+            return (
+              <div
+            className="relative rounded-lg bg-lightpink text-xl[backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 cursor-pointer border-[0.8px] border-solid border-red-100"
+            onClick={()=>{
+              window.location.replace('/ngo-details?id='+ngo.id)
+            }}
+            key={ngo.id}
+
+          >
+           {ngo.ngo_name}
+          </div>
+            )
+          })}
+          
         </div>
       </div>
       <TextareaContainer onFrameContainerClick={onFrameContainerClick} />

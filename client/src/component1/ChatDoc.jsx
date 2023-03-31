@@ -1,4 +1,4 @@
-import { useCallback, useContext } from "react";
+import { useCallback, useContext, useEffect } from "react";
 import React from "react";
 import VoiceContainer from "../component/VoiceContainer";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,7 @@ import Backarrow from "./images/backarrow.png"
 import { SocketContext } from "../context/ChatContext.js";
 import '../index.css'
 
-const ChatInterface1 = () => {
+const ChatInterface1 = ({type}) => {
   const navigate = useNavigate();
 
   const onBackArrowIconClick = useCallback(() => {
@@ -20,7 +20,12 @@ const ChatInterface1 = () => {
     navigate("/doctors-search-details");
   }, [navigate]);
 
-  const {msg, setMsg, msgSend} = useContext(SocketContext);
+  const {msg, setMsg, msgSend, setType} = useContext(SocketContext);
+
+
+  useEffect(()=>{
+    setType(type)
+  },[])
 
   return (
     <div className="relative bg-lavenderblush-200 w-full h-[8100px] overflow-hidden text-center text-5xl text-gray-300 font-montserrat">

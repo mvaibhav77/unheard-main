@@ -2,7 +2,7 @@ import React from "react";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-const DCyberContainer = () => {
+const DCyberContainer = ({name,regId,works,loc}) => {
   const navigate = useNavigate();
 
   const onBackArrowIconClick = useCallback(() => {
@@ -19,7 +19,7 @@ const DCyberContainer = () => {
           <div className="absolute top-[0px] left-[0px] w-[831px] h-[233px] flex flex-col items-start justify-start gap-[7px]">
             <div className="relative font-semibold">Works in</div>
             <div className="rounded-tl-none rounded-tr-11xl rounded-b-11xl bg-lavenderblush-200 w-[831px] h-[197px] shrink-0 flex flex-col items-center justify-center text-xl">
-              <div className="relative font-semibold inline-block w-[761px] h-[155px] shrink-0">{`Children,Education & Literacy,Health & Family Welfare,Information & Communication Technology,Micro Finance (SHGs),Micro Small & Medium Enterprises,Right to Information & Advocacy,Rural Development & Poverty Alleviation,Science & Technology,Urban Development & Poverty Alleviation,Vocational Training,Women's Development & Empowerment,Youth Affairs`}</div>
+              <div className="relative font-semibold inline-block w-[761px] h-[155px] shrink-0">{works}</div>
             </div>
           </div>
           <div className="absolute top-[260px] left-[0px] w-[832px] h-[95px]">
@@ -27,7 +27,7 @@ const DCyberContainer = () => {
             <div className="absolute top-[36px] left-[0px] rounded-tl-none rounded-tr-11xl rounded-b-11xl bg-lavenderblush-200 w-[831px] h-[59px]" />
             <div className="absolute top-[43px] left-[25px] w-[457px] h-11 flex flex-col py-0 px-[5px] box-border items-start justify-center text-xl">
               <div className="relative font-semibold">
-                S0018602, Medinipur East (WEST BENGAL)
+                {regId}
               </div>
             </div>
           </div>
@@ -37,8 +37,7 @@ const DCyberContainer = () => {
             </div>
             <div className="absolute top-[36px] left-[0px] rounded-tl-none rounded-tr-11xl rounded-b-11xl bg-lavenderblush-200 w-[831px] h-[77px]" />
             <div className="absolute top-[49px] left-[27px] text-xl font-semibold">
-              <p className="[margin-block-start:0] [margin-block-end:2px]">{`BARABARI, BARABARI, BHABANIPUR, HALDIA,\nPURBA MEDINIPUR, `}</p>
-              <p className="m-0">721645, WB, INDIA.</p>
+              <p className="[margin-block-start:0] [margin-block-end:2px]">{loc}</p>
             </div>
           </div>
         </div>
@@ -49,7 +48,7 @@ const DCyberContainer = () => {
             src="/back-arrow2.svg"
             onClick={onBackArrowIconClick}
           />
-          <div className="relative font-semibold">3D CYBER INSTITUTE</div>
+          <div className="relative font-semibold">{name}</div>
         </div>
       </div>
       <img

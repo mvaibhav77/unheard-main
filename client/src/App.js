@@ -2,8 +2,7 @@ import React from "react";
 import {Routes, Route, BrowserRouter as Router
   } from "react-router-dom";
   import LandingPage from "./component1/LandingPage";
-  import ChatInterface from "./component1/ChatNgo";
-  import ChatInterface1 from "./component1/ChatDoc";
+  import ChatHealth from "./component1/ChatHealth";
   import VIDEOCALL from "./component1/VIDEOCALL";
   import NgoSearch from "./component1/NgoSearch";
   import NgoSearch1 from "./component1/NgoSearch1";
@@ -18,6 +17,7 @@ import {Routes, Route, BrowserRouter as Router
   import FindYourDoctor1 from "./component1/FindYourDoctor1";
   import ChatPageNgo from "./pages/ChatPageNgo";
   import { ContextProvider as DocContextProvider } from "./context/DoctorsContext";
+  import { ContextProvider as NGOContextProvider } from "./context/NGOContext";
   
   function App() {
   
@@ -25,16 +25,40 @@ import {Routes, Route, BrowserRouter as Router
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/chat-interface" element={<ChatInterface />} />
-          <Route path="/chat-interface1" element={<ChatPageNgo />} />
+          <Route path="/chat-interface1" element={<ChatHealth />} />
+          <Route path="/chat-interface" element={<ChatPageNgo />} />
           <Route path="/video-call" element={<VIDEOCALL />} />
-          <Route path="/ngo-search1" element={<NgoSearch />} />
-          <Route path="/ngo-search" element={<NgoSearch1 />} />
-          <Route path="/ngo-search-spare1" element={<NgoSearchSpare />} />
-          <Route path="/ngo-search-spare" element={<NgoSearchSpare1 />} />
+          <Route path="/ngo-search1" element={
+            <NGOContextProvider>
+                <NgoSearch />
+            </NGOContextProvider>
+          } />
+          <Route path="/ngo-search" element={
+              <NGOContextProvider>
+                <NgoSearch1 />
+              </NGOContextProvider>
+          } />
+          <Route path="/ngo-search-spare1" element={
+            <NGOContextProvider> 
+                <NgoSearchSpare />
+            </NGOContextProvider>
+          } />
+          <Route path="/ngo-search-spare" element={
+              <NGOContextProvider> 
+                <NgoSearchSpare1 />
+            </NGOContextProvider>
+          } />
           <Route path="/about-us" element={<ABOUTUS />} />
-          <Route path="/ngo-details" element={<NgoDetails />} />
-          <Route path="/doctors-info" element={<DoctorsInfo />} />
+          <Route path="/ngo-details" element={
+            <NGOContextProvider>
+              <NgoDetails />
+            </NGOContextProvider>
+          } />
+          <Route path="/doctors-info" element={
+                <DocContextProvider>
+                  <DoctorsInfo />
+                </DocContextProvider>    
+          } />
           <Route
             path="/doctors-search-details1"
             element={
@@ -45,10 +69,23 @@ import {Routes, Route, BrowserRouter as Router
           />
           <Route
             path="/doctors-search-details"
-            element={<DoctorsSearchDetails1 />}
+            element={
+              <DocContextProvider>
+                <DoctorsSearchDetails1 />
+              </DocContextProvider>
+          }
           />
-          <Route path="/find-your-doctor1" element={<FindYourDoctor />} />
-          <Route path="/find-your-doctor" element={<FindYourDoctor1 />} />
+          <Route path="/find-your-doctor1" element={
+              <DocContextProvider>
+                <FindYourDoctor />
+              </DocContextProvider>
+
+          } />
+          <Route path="/find-your-doctor" element={
+              <DocContextProvider>
+                <FindYourDoctor1 />
+              </DocContextProvider>
+          } />
         </Routes>
       </Router>
       

@@ -51,6 +51,9 @@ const FindYourDoctor = () => {
     navigate("/");
   }, [navigate]);
 
+  console.log("location");
+
+
   return (
     <div className="relative bg-white w-full h-[1475px] overflow-hidden flex flex-col items-center justify-center gap-[70px]">
       <SearchContainer
@@ -76,6 +79,8 @@ const FindYourDoctor = () => {
         onAboutUsTextClick={onAboutUsTextClick}
         onHealthSupportTextClick={onHelpSupportTextClick}
         onContactUsTextClick={onContactUsTextClick}
+        type="loc"
+        forType="doctor"
       />
       <DoctorListContainer
         onRectangle6Click={onRectangle6Click}

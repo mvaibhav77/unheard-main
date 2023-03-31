@@ -8,25 +8,32 @@ const socket = io('http://localhost:5000');
 
 const ContextProvider = ({children})=>{
     const [msg, setMsg] = useState('');
+    const[type,setType] = useState('');
 
     useEffect(()=>{
+            socket.on("message", (msg)=>{
+                displayMsg("assistant", msg);
+            })
 
-        socket.on("message", (msg)=>{
-            displayMsg("assistant", msg);
-        })
     },[])
 
     const msgSend = (msg)=>{
 
         displayMsg("user", msg);
 
-        socket.emit("sendMessage", msg, (error)=>{
-            if (error) {
-                return alert(error);
-            }
-
-            // setMsg("");
-        })
+        if(type==='ngo'){
+            socket.emit("sendMessageNgo", msg, (error)=>{
+                if (error) {
+                    return alert(error);
+                }
+            })
+        }else{
+            socket.emit("sendMessageHealth", msg, (error)=>{
+                if (error) {
+                    return alert(error);
+                }
+            })
+        }
 
     }
 
@@ -42,7 +49,7 @@ const ContextProvider = ({children})=>{
     }
 
     return(
-        <SocketContext.Provider value={{ msg, setMsg, msgSend
+        <SocketContext.Provider value={{ msg, setMsg, msgSend, setType
         }}>
             {children}
         </SocketContext.Provider>

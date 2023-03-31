@@ -16,41 +16,70 @@ const ContextProvider = ({children})=>{
   
     useEffect(()=>{
         console.log('Firestore access _1');
-        const getNGOs =  async ()=>{
+        const getDoctors =  async ()=>{
             const data = await getDocs(DoctorCollectionRef);
             setDoctors(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
             // console.log(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
             // console.log(ngos)
         }
 
-        getNGOs();
+        // getDoctors();
     }, []);
 
     const getServiceResults = async (query)=>{
+        const docs =[];
+        console.log(query)
         const data = await getDocs(DoctorCollectionRef);
-        setResult(data.docs.map((doc)=>{
-            const docs = [];
-            console.log(doc)
-            return {...doc.data(), id: doc.id}
-        }))
+        let i=0;
+        data.docs.forEach((doc)=>{
+            // console.log(doc.data().Practicing)
+            if((i<5) && doc.data().Practicing && ((doc.data().Practicing.toLowerCase().indexOf(query.toLowerCase()))!==-1)){
+                console.log("found");
+                docs.push({...doc.data(), id:doc.id})
+                i++;
+            }  
+        })
+        console.log(docs)
+        setServiceSearched(docs);
 
     }
+
+
+    const getDoctorDetail = async (query)=>{
+        const docs=[];
+        const data = await getDocs(DoctorCollectionRef);
+        data.docs.forEach((item)=>{
+            console.log(item.data())
+
+            if(item.id === query){
+                console.log(item.data())
+                docs.push({...item.data(),id:item.id})
+            }
+        })
+       
+        setResult(docs);
+    }
+
 
 
 
     const getLocationResults = async (query)=>{
+        const docs =[];
         const data = await getDocs(DoctorCollectionRef);
-        setResult(data.docs.map((doc)=>{
-            // console.log(doc);
-            // const docs = [];
-            console.log(doc.data().City)
-            if(doc.data().City == query){
-                return {...doc.data(), id: doc.id}
-            }
-            // return {docs}
-        }))
+        let i=0;
+        data.docs.forEach((doc)=>{
+            if((i<5) && (((doc.data()['City'].toLowerCase()).indexOf(query.toLowerCase())!==-1) || ((doc.data()['State'].toLowerCase()).indexOf(query.toLowerCase())!==-1))){
+                console.log("found");
+                docs.push({...doc.data(), id:doc.id})
+                i++;
+            }  
+        })
 
+        console.log(docs)
+        setLocationSearched(docs);
     }
+
+
 
     return(
         <DoctorContext.Provider value={{
@@ -61,7 +90,7 @@ const ContextProvider = ({children})=>{
             setLocationSearched,
             serviceSearched,
             locationSearched,
-
+            getDoctorDetail
         }}>
             {children}
         </DoctorContext.Provider>

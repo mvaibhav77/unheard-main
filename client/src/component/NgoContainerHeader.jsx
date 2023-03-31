@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
-import { useEffect } from "react";
-
 
 const SearchContainer = ({
   searchNameText,
@@ -30,7 +27,6 @@ const SearchContainer = ({
   onHealthSupportTextClick,
   onContactUsTextClick,
   type,
-  forType
 }) => {
   const rectangleDiv3Style = useMemo(() => {
     return {
@@ -96,18 +92,7 @@ const SearchContainer = ({
     };
   }, [logoWidth]);
 
-
-  const [searchParam, setSearchParam] = useSearchParams();
   const [query, setQuery] = useState('');
-
-useEffect(()=>{
-  if(searchParam.get('query')!== null){
-    setQuery(searchParam.get('query'));
-  }
-},[])
-
-
-
 
   const handleChange = (e)=>{
     const newQuery = e.target.value;
@@ -115,33 +100,19 @@ useEffect(()=>{
   }
 
   const handleSubmit = (e)=>{
-
-    if(forType==='ngo'){
-      if(type==='name'){
-        window.location.replace('/ngo-search-spare?query='+query);
-      }else{
-        window.location.replace('/ngo-search-spare1?query='+query);
-      }
+    if(type==='loc'){
+      window.location.replace('/doctors-search-details?query='+query);
     }else{
-      if(type==='loc'){
-        window.location.replace('/doctors-search-details?query='+query);
-      }else{
-        window.location.replace('/doctors-search-details1?query='+query);
-      }
+      window.location.replace('/doctors-search-details1?query='+query);
     }
-
     e.preventDefault()
-  }
-
-  const returnQuery=()=>{
-    return query;
   }
 
 
   return (
     <div className="relative bg-lightpink [backdrop-filter:blur(4px)] box-border w-[1280.8px] h-[342.8px] shrink-0 text-center text-mid text-white font-montserrat border-[0.8px] border-solid border-red-100">
       <div className="absolute top-[149px] left-[173px] w-[933px] h-[147px] text-left">
-      <input type='text' value={query}  onChange={(e)=>handleChange(e)}  className="absolute top-[53px] left-[0px] rounded-3041xl box-border w-[607px] h-[94px] border-[15px] border-solid border-red-100 bg-white w-[607px] h-[94px]"
+      <input type='text'  onChange={(e)=>handleChange(e)}  className="absolute top-[53px] left-[0px] rounded-3041xl box-border w-[607px] h-[94px] border-[15px] border-solid border-red-100 bg-white w-[607px] h-[94px]"
         />
         <div
           className="absolute top-[0px] left-[0px] rounded-tl-11xl rounded-tr-none rounded-b-none bg-white w-[214px] h-[53px] cursor-pointer"

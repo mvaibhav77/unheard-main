@@ -5,7 +5,7 @@ import ChatInterface1 from '../component1/ChatDoc'
 function ChatPageNgo() {
   return (
     <ContextProvider>
-        <ChatInterface1/>
+        <ChatInterface1 type='ngo'/>
     </ContextProvider>
   )
 }
