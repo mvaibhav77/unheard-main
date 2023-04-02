@@ -33,7 +33,7 @@ const ContextProvider = ({children})=>{
         let i=0;
         data.docs.forEach((doc)=>{
             // console.log(doc.data().Practicing)
-            if((i<5) && doc.data().Practicing && ((doc.data().Practicing.toLowerCase().indexOf(query.toLowerCase()))!==-1) &&  (doc.data().City.toLowerCase().indexOf(String(loc).toLowerCase()) !== -1 || doc.data().State.toLowerCase().indexOf(String(loc).toLowerCase()) !== -1)){
+            if((i<5) && doc.data().Practicing && ((doc.data().Practicing.toLowerCase().indexOf(query.toLowerCase()))!==-1) &&  (doc.data()['City'].toLowerCase().indexOf(loc.toLowerCase()) !== -1 || doc.data()['State'].toLowerCase().indexOf(loc.toLowerCase()) !== -1) ){
                 console.log("found in locality");
                 docs.push({...doc.data(), id:doc.id})
                 i++;
