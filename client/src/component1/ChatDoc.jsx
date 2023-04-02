@@ -64,10 +64,10 @@ const ChatInterface1 = ({type}) => {
       </div>
       
      
-      <div className="relative top-[84px] left-[114px] w-[1051px] h-[672px] text-left text-17xl text-red-100">
-        <div className="absolute top-[0px] left-[0px] w-[1051px] h-[672px]">
-          <div className="absolute top-[0px] left-[0px] rounded-6xl bg-lavenderblush-100 [backdrop-filter:blur(4px)] w-[1051px] h-[672px]" />
-          <div className="absolute top-[127px] left-[0px] shadow-[0px_2px_3px_rgba(218,_27,_27,_0.75)] box-border w-[1051px] h-0 border-t-[1px] border-solid border-crimson-200" />
+      <div className="relative top-[84px] left-[114px] w-[900px] h-[672px] text-left text-17xl text-red-100">
+        <div className="absolute top-[0px] left-[0px] w-[900px] h-[672px]">
+          <div className="absolute top-[0px] left-[0px] rounded-6xl bg-lavenderblush-100 [backdrop-filter:blur(4px)] w-[900px] h-[672px]" />
+          <div className="absolute top-[127px] left-[0px] shadow-[0px_2px_3px_rgba(218,_27,_27,_0.75)] box-border w-[900px] h-0 border-t-[1px] border-solid border-crimson-200" />
           <div className="relative top-[31px] left-[32px] w-[448px] h-11">
             
             <img
@@ -88,8 +88,8 @@ const ChatInterface1 = ({type}) => {
         </div>
 
 {/* main-chat container */}
-        <div id="chat-container" className="relative rounded-md top-[140px] left-[10px] h-[520px] w-[1000px] text-lg text-crimson-100">
-      <div id="messages h-[500px] " className="h-[650px]  "></div>
+        <div id="chat-container" className="relative rounded-md top-[140px] left-[10px] h-[520px] text-lg text-crimson-100">
+      <div id="messages"></div>
       <form id="message-form">
         <input className="bg-lavenderblush-100" type="text" id="message-input" placeholder="Type your message " onChange={(e)=>setMsg(e.target.value)} autoComplete="off" />
         <button className="bg-red-100" type="submit" onClick={(e)=>{

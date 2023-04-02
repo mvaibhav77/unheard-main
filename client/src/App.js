@@ -18,7 +18,8 @@ import {Routes, Route, BrowserRouter as Router
   import ChatPageNgo from "./pages/ChatPageNgo";
   import { ContextProvider as DocContextProvider } from "./context/DoctorsContext";
   import { ContextProvider as NGOContextProvider } from "./context/NGOContext";
-  
+  import { ContextProvider as LocationProvider } from "./context/LocationContext";
+
   function App() {
   
     return (
@@ -30,17 +31,23 @@ import {Routes, Route, BrowserRouter as Router
           <Route path="/video-call" element={<VIDEOCALL />} />
           <Route path="/ngo-search1" element={
             <NGOContextProvider>
-                <NgoSearch />
+                <LocationProvider>
+                  <NgoSearch />  
+                </LocationProvider>
             </NGOContextProvider>
           } />
           <Route path="/ngo-search" element={
               <NGOContextProvider>
-                <NgoSearch1 />
+                <LocationProvider>
+                  <NgoSearch1 />  
+                </LocationProvider>
               </NGOContextProvider>
           } />
           <Route path="/ngo-search-spare1" element={
-            <NGOContextProvider> 
+            <NGOContextProvider>
+              <LocationProvider>
                 <NgoSearchSpare />
+              </LocationProvider>
             </NGOContextProvider>
           } />
           <Route path="/ngo-search-spare" element={
@@ -63,7 +70,9 @@ import {Routes, Route, BrowserRouter as Router
             path="/doctors-search-details1"
             element={
               <DocContextProvider>
-                <DoctorsSearchDetails />
+                <LocationProvider>
+                  <DoctorsSearchDetails />
+                </LocationProvider>
               </DocContextProvider>
               }
           />
@@ -71,20 +80,26 @@ import {Routes, Route, BrowserRouter as Router
             path="/doctors-search-details"
             element={
               <DocContextProvider>
-                <DoctorsSearchDetails1 />
+                <LocationProvider>
+                  <DoctorsSearchDetails1 />
+                </LocationProvider>
               </DocContextProvider>
           }
           />
           <Route path="/find-your-doctor1" element={
               <DocContextProvider>
-                <FindYourDoctor />
+                <LocationProvider>
+                  <FindYourDoctor />
+                </LocationProvider>
               </DocContextProvider>
 
           } />
           <Route path="/find-your-doctor" element={
               <DocContextProvider>
-                <FindYourDoctor1 />
-              </DocContextProvider>
+                <LocationProvider>
+                  <FindYourDoctor1 />
+                </LocationProvider>
+            </DocContextProvider>
           } />
         </Routes>
       </Router>

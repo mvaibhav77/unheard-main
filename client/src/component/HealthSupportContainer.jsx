@@ -9,15 +9,15 @@ const HealthSupportContainer = () => {
   const navigate = useNavigate();
 
   const onRectangle5Click = useCallback(() => {
-    navigate("/doctors-info");
+    navigate("/doctors-info?id=06i9MEgYDpUk0VglfTW0");
   }, [navigate]);
 
   const onRectangle6Click = useCallback(() => {
-    navigate("/doctors-info");
+    navigate("/doctors-info?id=00ZR4FeiMFJ12GCsllW2");
   }, [navigate]);
 
   const onRectangle7Click = useCallback(() => {
-    navigate("/doctors-info");
+    navigate("/doctors-info?id=09TRxSp4eAtPSGgPFpVD");
   }, [navigate]);
 
   const onLearnMoreContainerClick = useCallback(() => {

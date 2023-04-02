@@ -143,7 +143,7 @@ input- `
         conversationHistory.pop();
         conversationHistory.push({ role: "assistant", content: response });
 
-        socket.emit("message", 'You can search for following keyword in our Doctor Search page : '+response);
+        socket.emit("message", response);
         callback();
         } catch (error) {
         console.error(error.response);
@@ -168,7 +168,7 @@ input- `
         conversationHistory.pop();
         conversationHistory.push({ role: "assistant", content: response });
 
-        socket.emit("message", 'You can search for following keyword in our NGO Search page : '+response);
+        socket.emit("message", response);
         callback();
         } catch (error) {
         console.error(error.response);

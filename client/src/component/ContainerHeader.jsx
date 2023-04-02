@@ -18,7 +18,8 @@ const ContainerHeader = ({
   onAboutUsTextClick,
   onHelpSupportTextClick,
   onContactUsTextClick,
-  type
+  type,
+  loc
 }) => {
   const rectangleDivStyle = useMemo(() => {
     return {
@@ -65,7 +66,6 @@ const ContainerHeader = ({
     serviceSearched,
     locationSearched,} = useContext(DoctorContext);
 
-
     const [searchParam, setSearchParam] = useSearchParams();
     const [query, setQuery] = useState(searchParam.get('query'));
     console.log(query)
@@ -82,8 +82,6 @@ const ContainerHeader = ({
     }
 
     useEffect(()=>{
-      // getLocationResults(searchParam.get('query'));
-      // console.log(result);
       if(type==='loc'){
         console.log('location');
       }else{
@@ -95,14 +93,15 @@ const ContainerHeader = ({
     const handleChange = (e)=>{
       const newQuery = e.target.value;
       setQuery(newQuery);
-      setSearchParam({
-        query: newQuery,
-      })
     }
 
     const handleSubmit = (e)=>{
       // putResult(input);
-      window.location.replace(window.location.href);
+      if(type==='loc'){
+        window.location.replace(`/doctors-search-details?query=${query}`);
+      }else{
+        window.location.replace(`/doctors-search-details1?query=${query}&loc=${loc}`);
+      }
       e.preventDefault();
     }
 

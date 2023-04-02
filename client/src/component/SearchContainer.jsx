@@ -33,7 +33,8 @@ const SearchContainer = ({
   onHealthSupportTextClick,
   onContactUsTextClick,
   type,
-  forType
+  forType,
+  loc
 }) => {
   const rectangleDiv3Style = useMemo(() => {
     return {
@@ -121,23 +122,20 @@ useEffect(()=>{
 
     if(forType==='ngo'){
       if(type==='name'){
-        window.location.replace('/ngo-search-spare?query='+query);
+        window.location.replace(`/ngo-search-spare?query=${encodeURIComponent(query)}`);
       }else{
-        window.location.replace('/ngo-search-spare1?query='+query);
+        window.location.replace(`/ngo-search-spare1?query=${encodeURIComponent(query)}&loc=${encodeURIComponent(loc)}`);
+
       }
     }else{
       if(type==='loc'){
-        window.location.replace('/doctors-search-details?query='+query);
+        window.location.replace(`/doctors-search-details?query=${encodeURIComponent(query)}`);
       }else{
-        window.location.replace('/doctors-search-details1?query='+query);
+        window.location.replace(`/doctors-search-details1?query=${encodeURIComponent(query)}&loc=${encodeURIComponent(loc)}`);
       }
     }
 
     e.preventDefault()
-  }
-
-  const returnQuery=()=>{
-    return query;
   }
 
 

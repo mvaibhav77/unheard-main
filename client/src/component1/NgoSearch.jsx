@@ -5,6 +5,7 @@ import SearchContainer from "../component/SearchContainer";
 import TextareaContainer from "../component/TextareaContainer";
 import { NGOContext } from "../context/NGOContext";
 import FooterContainer from "../component/FooterContainer";
+import { LocationContext } from "../context/LocationContext";
 
 
 <FooterContainer />
@@ -57,6 +58,8 @@ const NgoSearch = () => {
   }, [navigate]);
 
   const {getRandomThreeNgo,randomThreeNgo,} = useContext(NGOContext);
+  const {city} = useContext(LocationContext)
+
 
   useEffect(()=>{
     getRandomThreeNgo();
@@ -76,6 +79,8 @@ const NgoSearch = () => {
         onContactUsTextClick={onContactUsTextClick}
         forType='ngo'
         type='sector'
+        loc={city}
+
       />
       
       

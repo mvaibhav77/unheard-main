@@ -41,13 +41,17 @@ const NgoSearchSpare = () => {
     setNameSearched,
     sectorSearched,
     nameSearched, searchedNgo, getNGODetail} = useContext(NGOContext);
+
+  
   const [searchParam, setSearchParam] = useSearchParams();
   const [query, setQuery] = useState(searchParam.get('query'));
+  const [locQuery, setLocQuery] = useState(searchParam.get('loc'))
   console.log(query);
 
   useEffect(()=>{
-    getSectorResults(query);
+    getSectorResults(query,locQuery);
   },[]) 
+
 
 
 

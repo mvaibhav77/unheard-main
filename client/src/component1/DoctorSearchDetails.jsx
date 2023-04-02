@@ -7,6 +7,7 @@ import TextareaContainer from "../component/TextareaContainer";
 import { DoctorContext } from "../context/DoctorsContext";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
+import { LocationContext } from "../context/LocationContext";
 
 const DoctorSearchDetails = () => {
   const navigate = useNavigate();
@@ -43,14 +44,16 @@ const DoctorSearchDetails = () => {
     serviceSearched,
     locationSearched,} = useContext(DoctorContext);
 
+  const {city} = useContext(LocationContext)
 
     const [searchParam, setSearchParam] = useSearchParams();
   const [query, setQuery] = useState(searchParam.get('query'));
+  const [loc, setLoc] = useState(searchParam.get('loc'));
   console.log(query);
 
 
     useEffect(()=>{
-      getServiceResults(query);
+      getServiceResults(query,loc);
       console.log(serviceSearched);
     },[])
 
@@ -62,6 +65,7 @@ const DoctorSearchDetails = () => {
         onHelpSupportTextClick={onHelpSupportTextClick}
         onContactUsTextClick={onContactUsTextClick}
         type = {'service'}
+        loc={city}
       />
       <div className="absolute top-[475px] left-[99px] w-[884px] h-[608px] flex flex-col items-center justify-start gap-[44px] text-left text-5xl text-black font-montserrat">
       {serviceSearched.length ? serviceSearched.map(doc=>{

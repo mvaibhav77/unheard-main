@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import SearchContainer from "../component/SearchContainer";
 import TextareaContainer from "../component/TextareaContainer";
 import { NGOContext } from "../context/NGOContext";
+import { LocationContext } from "../context/LocationContext";
 
-const NgoSearch1 = () => {
+const  NgoSearch1 = () => {
   const navigate = useNavigate();
 
   const onSERVICEContainerClick = useCallback(() => {
@@ -55,6 +56,7 @@ const NgoSearch1 = () => {
 
 
   const {getRandomThreeNgo,randomThreeNgo,} = useContext(NGOContext);
+  const {city} = useContext(LocationContext)
 
   useEffect(()=>{
     getRandomThreeNgo();
@@ -87,6 +89,7 @@ const NgoSearch1 = () => {
         onContactUsTextClick={onContactUsTextClick}
         type='name'
         forType='ngo'
+        loc={city}
       />
       <div className="w-[1043px] h-[479px] shrink-0 flex flex-col items-start justify-start gap-[52px]">
         <div className="relative font-semibold">

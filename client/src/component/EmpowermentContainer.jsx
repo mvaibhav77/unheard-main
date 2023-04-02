@@ -1,17 +1,16 @@
 import React from "react";
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 
 const EmpowermentContainer = () => {
-  const navigate = useNavigate();
 
-  const onContainerClick = useCallback(() => {
-    navigate("/chat-interface1");
-  }, [navigate]);
+  const onContainerClick = (e)=>{
+    window.location.replace('/chat-interface1');
+    e.preventDefault();
+  };
 
-  const onNgoButtonContainerClick = useCallback(() => {
-    navigate("/chat-interface");
-  }, []);
+  const onNgoButtonContainerClick = (e) => {
+    window.location.replace('/chat-interface');
+    e.preventDefault();
+  };
 
   return (
     <div className="absolute top-[189px] left-[0px] w-[753px] h-[430px] text-left text-13xl text-gray-300 font-montserrat">
@@ -22,16 +21,15 @@ const EmpowermentContainer = () => {
       </div>
       <div
         className="absolute top-[377px] left-[0px] h-[53px] flex flex-row items-center justify-start cursor-pointer text-center text-5xl"
-        onClick={onNgoButtonContainerClick}
       >
         <div className="rounded-t-none rounded-br-none rounded-bl bg-gainsboro-300 box-border w-[215px] h-[53px] shrink-0 flex flex-col py-0 px-[17px] items-end justify-center border-[2px] border-solid border-red-100">
-          <div className="relative font-semibold flex items-center justify-center w-44 h-11 shrink-0">
+          <div className="relative font-semibold flex items-center justify-center w-44 h-11 shrink-0" onClick={onContainerClick}>
             Health
           </div>
         </div>
         <div
           className="rounded-t-none rounded-br rounded-bl-none bg-red-100 box-border w-[213px] h-[57px] shrink-0 flex flex-col items-center justify-center cursor-pointer text-white border-[2px] border-solid border-white"
-          onClick={onContainerClick}
+          onClick={onNgoButtonContainerClick}
         >
           <div className="relative font-semibold">NGO’s</div>
         </div>

@@ -8,15 +8,15 @@ const HelpSupportContainer = () => {
   const navigate = useNavigate();
 
   const onRectangle9Click = useCallback(() => {
-    navigate("/ngo-details");
+    navigate("/ngo-details?id=1");
   }, [navigate]);
 
   const onRectangle10Click = useCallback(() => {
-    navigate("/ngo-details");
+    navigate("/ngo-details?id=17");
   }, [navigate]);
 
   const onRectangle11Click = useCallback(() => {
-    navigate("/ngo-details");
+    navigate("/ngo-details?id=4");
   }, [navigate]);
 
   const onLearnMoreContainer1Click = useCallback(() => {
@@ -39,13 +39,13 @@ const HelpSupportContainer = () => {
           className="relative left-[50px] w-[350.68px] h-[350.4px] shrink-0 cursor-pointer"
             alt=""
           src = {Ngo}
-          onClick={onRectangle9Click}
+          onClick={onRectangle10Click}
           />
          <img
           className="relative left-[50px] w-[350.68px] h-[350.4px] shrink-0 cursor-pointer"
             alt=""
           src = {Ngo}
-          onClick={onRectangle9Click}
+          onClick={onRectangle11Click}
           />
       </div>
       <div className="absolute top-[127.79px] left-[0px] w-[660px] h-[324px] text-center">

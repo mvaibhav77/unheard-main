@@ -5,6 +5,7 @@ import Peer from 'simple-peer';
 const  SocketContext = createContext();
 
 const socket = io('https://unheard-backend-2igb.onrender.com');
+// const socket = io('http://localhost:5000/');
 
 
 
@@ -14,7 +15,6 @@ const ContextProvider =({ children })=>{
     const [me,setMe] = useState('')
     const [name,setName] = useState('')
     const [call, setCall] = useState({});
-    const [caller, setCaller] = useState({});
     const [callAccepted, setCallAccepted] = useState(false);
     const [callEnded, setCallEnded] = useState(false);
 

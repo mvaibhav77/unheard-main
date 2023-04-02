@@ -36,15 +36,15 @@ const FindYourDoctor = () => {
   }, []);
 
   const onRectangle6Click = useCallback(() => {
-    navigate("/doctors-info?id=08JCQWeStySK05Ufu18t");
+    navigate("/doctors-info?id=09TRxSp4eAtPSGgPFpVDt");
   }, [navigate]);
 
   const onRectangle7Click = useCallback(() => {
-    navigate("/doctors-info?id=04z1tOESULYWAnm5XSx4");
+    navigate("/doctors-info?id=06i9MEgYDpUk0VglfTW0");
   }, [navigate]);
 
   const onRectangle8Click = useCallback(() => {
-    navigate("/doctors-info?id=05FxhHIdKPFbFhNShb7i");
+    navigate("/doctors-info?id=0DAipwW7Olw5D0wzEgPx");
   }, [navigate]);
 
   const onFrameContainer2Click = useCallback(() => {

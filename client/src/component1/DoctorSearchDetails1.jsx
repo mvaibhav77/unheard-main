@@ -7,6 +7,8 @@ import { DoctorContext } from "../context/DoctorsContext";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import SearchResultDisplay from "../component/SearchResultDisplay";
+import { LocationContext } from "../context/LocationContext";
+
 
 const DoctorSearchDetails1 = () => {
   const navigate = useNavigate();
@@ -55,6 +57,8 @@ const DoctorSearchDetails1 = () => {
     serviceSearched,
     locationSearched,} = useContext(DoctorContext);
 
+  const {city} = useContext(LocationContext)
+  
     
     const [searchParam, setSearchParam] = useSearchParams();
   const [query, setQuery] = useState(searchParam.get('query'));
@@ -80,7 +84,8 @@ const DoctorSearchDetails1 = () => {
         onAboutUsTextClick={onAboutUsTextClick}
         onHelpSupportTextClick={onHelpSupportTextClick}
         onContactUsTextClick={onContactUsTextClick} 
-        type={'loc'}
+        type='loc'
+        loc={city}
       />
       <div className="absolute top-[475px] left-[99px] w-[884px] h-[608px] flex flex-col items-center justify-start gap-[44px] text-left text-5xl text-black font-montserrat">
       {locationSearched.length ? locationSearched.map(doc=>{

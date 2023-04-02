@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchContainer from "../component/SearchContainer";
 import DoctorListContainer from "../component/DoctorListContainer";
 import TextareaContainer from "../component/TextareaContainer";
+import { LocationContext } from "../context/LocationContext";
 
 const HealthSupportContainer = () => {
   const navigate = useNavigate();
@@ -36,15 +37,15 @@ const HealthSupportContainer = () => {
   }, []);
 
   const onRectangle6Click = useCallback(() => {
-    navigate("/doctors-info?id=00ZR4FeiMFJ12GCsllW2");
+    navigate("/doctors-info?id=09TRxSp4eAtPSGgPFpVDt");
   }, [navigate]);
 
   const onRectangle7Click = useCallback(() => {
-    navigate("/doctors-info?id=04z1tOESULYWAnm5XSx4");
+    navigate("/doctors-info?id=06i9MEgYDpUk0VglfTW0");
   }, [navigate]);
 
   const onRectangle8Click = useCallback(() => {
-    navigate("/doctors-info?id=06i9MEgYDpUk0VglfTW0");
+    navigate("/doctors-info?id=0DAipwW7Olw5D0wzEgPx");
   }, [navigate]);
 
   const onFrameContainer2Click = useCallback(() => {
@@ -52,6 +53,8 @@ const HealthSupportContainer = () => {
   }, [navigate]);
 
   console.log('services');
+
+  const {city} = useContext(LocationContext);
   return (
 <div className="relative bg-white w-full h-[1475px] overflow-hidden flex flex-col items-center justify-center gap-[70px]">
       <SearchContainer
@@ -79,6 +82,7 @@ const HealthSupportContainer = () => {
         onContactUsTextClick={onContactUsTextClick}
         type="service"
         forType="doctor"
+        loc={city}
       />
       <DoctorListContainer
         onRectangle6Click={onRectangle6Click}

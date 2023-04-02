@@ -12,6 +12,7 @@ const ContextProvider = ({children})=>{
     const [result, setResult] = useState([]);
     const [searchedNgo, setSearchedNgo] = useState([]);
     const [randomThreeNgo, setRandomThreeNgo] = useState([]);
+    // const [flag,setFlag] = useState(0)
 
 
     const [NGOName, setNGOName] = useState('');
@@ -27,23 +28,29 @@ const ContextProvider = ({children})=>{
         getNGOs()
     }, []);
 
-    const getSectorResults = async (query)=>{
-        console.log(query);
+    const getSectorResults = async (query,loc)=>{
+        console.log(query, loc);
         const ngos=[];
         let i=0;
         const data = await getDocs(NGOCollectionRef);
         data.docs.forEach((ngo)=>{
-            if((i<5) && ngo.data().sector && (ngo.data().sector.toLowerCase().indexOf(String(query))!==-1)){
-                console.log("found");
+            if((i<5) && ngo.data().sector && (ngo.data().sector.toLowerCase().indexOf(String(query))!==-1) && loc !== '' && (ngo.data().location.toLowerCase().indexOf(String(loc).toLowerCase()) !== -1 || ngo.data().reg_no.toLowerCase().indexOf(String(loc).toLowerCase()) !== -1)){
+                console.log('found in locality');
                 // console.log(ngo.sector)
                 ngos.push({...ngo.data()})
                 i++;
             }  
         })
-
+        data.docs.forEach((ngo)=>{
+            if((i<5) && ngo.data().sector && (ngo.data().sector.toLowerCase().indexOf(String(query))!==-1)){
+                console.log('found not in locality');
+                // console.log(ngo.sector)
+                ngos.push({...ngo.data()})
+                i++;
+            }  
+        })
         setSectorSearched(ngos)
         console.log(sectorSearched);
-
     }
 
     const getNameResults = async (query)=>{
