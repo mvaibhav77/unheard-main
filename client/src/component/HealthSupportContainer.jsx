@@ -36,19 +36,19 @@ const HealthSupportContainer = () => {
         </div>
         <div className="w-[1043px] h-[349px] shrink-0 flex flex-row items-center justify-start gap-[52px]">
         <img
-          className="relative w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
+          className="relative left-[50px] w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
             alt=""
           src = {Doctor}
           onClick={onRectangle6Click}
           />
           <img
-          className="relative w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
+          className="relative left-[50px] w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
             alt=""
           src = {Doctor}
           onClick={onRectangle6Click}
           />
           <img
-          className="relative w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
+          className="relative left-[50px] w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
             alt=""
           src = {Doctor}
           onClick={onRectangle6Click}

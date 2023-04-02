@@ -17,7 +17,7 @@ const NgoSearch1 = () => {
   }, [navigate]);
 
   const onHomeTextClick = useCallback(() => {
-    navigate("/");
+    navigate("/Home");
   }, [navigate]);
 
   const onAboutUsTextClick = useCallback(() => {

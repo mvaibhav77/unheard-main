@@ -9,6 +9,7 @@ import Backarrow from "./images/backarrow.png"
 import { SocketContext } from "../context/ChatContext.js";
 import '../index.css'
 import Ellipse from'./images/ellipse.png'
+import NavigationContainer from "../component/NavigationContainer";
 
 const ChatInterface1 = ({type}) => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const ChatInterface1 = ({type}) => {
   },[])
 
   return (
-    <div className="relative bg-lavenderblush-200 w-full h-[8100px] overflow-hidden text-center text-5xl text-gray-300 font-montserrat">
+    <div className="relative bg-lavenderblush-200 w-full h-[1200px] overflow-hidden text-center text-5xl text-gray-300 font-montserrat">
       <div className="absolute top-[17px] left-[65px] w-[1431px] h-[756px]">
         <img
           className="absolute top-[55px] left-[845px] w-[586px] h-[701px] object-cover"
@@ -45,29 +46,12 @@ const ChatInterface1 = ({type}) => {
             <div className="absolute top-[-2px] left-[-2px] rounded-tl rounded-tr-none rounded-br-none rounded-bl bg-gainsboro-300 box-border w-[215px] h-[53px] border-[2px] border-solid border-red-100" />
           </div>
         </div>
-        <div className="absolute top-[18px] left-[238px] w-[776px] h-[29px] text-red-100 font-cabin">
-          <div className="absolute top-[0px] left-[0px] flex flex-row items-start justify-center gap-[24px]">
-            <div className="relative font-semibold [backdrop-filter:blur(4px)]">
-              Home
-            </div>
-            <div className="relative font-semibold [backdrop-filter:blur(4px)]">
-              About Us
-            </div>
-            <div className="relative font-semibold [backdrop-filter:blur(4px)]">
-              Help Support
-            </div>
-            <div className="relative font-semibold [backdrop-filter:blur(4px)]">
-              Health Support
-            </div>
-            <div className="relative font-semibold [backdrop-filter:blur(4px)]">
-              Features
-            </div>
-            <div className="relative font-semibold [backdrop-filter:blur(4px)]">
-              Contact Us
-            </div>
-          </div>
-        </div>
+       
         <VoiceContainer />
+       <div className="relative top-[0px] left-[0px] bg-mistyrose-700 [filter:blur(100px)] w-[1280px] h-[810px]" />
+      
+        <NavigationContainer />
+
         <div className="absolute top-[0px] left-[2px] w-[167px] h-[54px] text-25xl">
           <div className="absolute top-[2px] left-[36px] font-semibold flex items-center justify-center w-7 h-[51px]">
             h
@@ -78,12 +62,14 @@ const ChatInterface1 = ({type}) => {
           </div>
         </div>
       </div>
-      <div className="absolute top-[0px] left-[0px] bg-mistyrose-700 [filter:blur(100px)] w-[1280px] h-[810px]" />
-      <div className="absolute top-[84px] left-[114px] w-[1051px] h-[672px] text-left text-17xl text-red-100">
+      
+     
+      <div className="relative top-[84px] left-[114px] w-[1051px] h-[672px] text-left text-17xl text-red-100">
         <div className="absolute top-[0px] left-[0px] w-[1051px] h-[672px]">
           <div className="absolute top-[0px] left-[0px] rounded-6xl bg-lavenderblush-100 [backdrop-filter:blur(4px)] w-[1051px] h-[672px]" />
           <div className="absolute top-[127px] left-[0px] shadow-[0px_2px_3px_rgba(218,_27,_27,_0.75)] box-border w-[1051px] h-0 border-t-[1px] border-solid border-crimson-200" />
-          <div className="absolute top-[31px] left-[32px] w-[448px] h-11">
+          <div className="relative top-[31px] left-[32px] w-[448px] h-11">
+            
             <img
               className="absolute top-[9.6px] left-[-0.61px] w-[30.14px] h-[27.4px] cursor-pointer"
               alt=""
@@ -102,11 +88,11 @@ const ChatInterface1 = ({type}) => {
         </div>
 
 {/* main-chat container */}
-        <div id="chat-container" className="absolute top-[125px] left-[1px] w-[1049px] h-[auto] text-lg text-crimson-100">
-      <div id="messages" className="h-[600px]"></div>
+        <div id="chat-container" className="relative rounded-md top-[140px] left-[10px] h-[520px] w-[1000px] text-lg text-crimson-100">
+      <div id="messages h-[500px] " className="h-[650px]  "></div>
       <form id="message-form">
-        <input type="text" id="message-input" placeholder="Type your message" onChange={(e)=>setMsg(e.target.value)} autoComplete="off" />
-        <button type="submit" onClick={(e)=>{
+        <input className="bg-lavenderblush-100" type="text" id="message-input" placeholder="Type your message " onChange={(e)=>setMsg(e.target.value)} autoComplete="off" />
+        <button className="bg-red-100" type="submit" onClick={(e)=>{
           e.preventDefault();
           msgSend(msg)
         }}>Send</button>

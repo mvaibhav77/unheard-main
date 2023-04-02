@@ -8,7 +8,7 @@ const DCyberContainer = ({name,regId,works,loc}) => {
   const navigate = useNavigate();
 
   const onBackArrowIconClick = useCallback(() => {
-    navigate("/ngo-search-spare");
+    navigate("/ngo-search1");
   }, [navigate]);
 
   return (

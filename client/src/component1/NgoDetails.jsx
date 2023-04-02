@@ -7,6 +7,7 @@ import { useSearchParams } from "react-router-dom";
 import { NGOContext } from "../context/NGOContext";
 import GoogleMapLocation from "../component/GoogleMapLocation";
 import About from './images/about.png'
+import { Button } from "@mui/material";
 
 const NgoDetails = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const NgoDetails = () => {
   }, [navigate]);
 
   const onHomeText1Click = useCallback(() => {
-    navigate("/");
+    navigate("/Home");
   }, [navigate]);
 
   const onAboutUsText1Click = useCallback(() => {
@@ -107,30 +108,42 @@ const NgoDetails = () => {
           className="flex flex-row items-start justify-center gap-[24px] cursor-pointer text-xl text-red-100 font-cabin"
           onClick={onNavContainerClick}
         >
-          <div
+          <Button
             className="relative font-semibold [backdrop-filter:blur(4px)] cursor-pointer"
             onClick={onHomeText1Click}
+            sx={{ width: 10 }}
+          variant="LINED"
+          color="error"
           >
             Home
-          </div>
-          <div
+          </Button>
+          <Button
             className="relative font-semibold [backdrop-filter:blur(4px)] cursor-pointer"
             onClick={onAboutUsText1Click}
+            sx={{ width: 130 }}
+          variant="LINED"
+          color="error"
           >
             About Us
-          </div>
-          <div
+          </Button>
+          <Button
             className="relative font-semibold [backdrop-filter:blur(4px)] cursor-pointer"
             onClick={onHealthSupportText1Click}
+            sx={{ width: 160 }}
+          variant="LINED"
+          color="error"
           >
             Health Support
-          </div>
-          <div
+          </Button>
+          <Button
             className="relative font-semibold [backdrop-filter:blur(4px)] cursor-pointer"
             onClick={onContactUsText2Click}
+            sx={{ width: 130 }}
+          variant="LINED"
+          color="error"
           >
             Contact Us
-          </div>
+          </Button>
         </div>
       </div>
     </div>

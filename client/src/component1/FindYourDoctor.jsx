@@ -6,7 +6,7 @@ import DoctorListContainer from "../component/DoctorListContainer";
 import TextareaContainer from "../component/TextareaContainer";
 
 const FindYourDoctor = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate("/");
 
   const onRectangle1Click = useCallback(() => {
     navigate("/find-your-doctor");
@@ -28,8 +28,8 @@ const FindYourDoctor = () => {
     navigate("/ngo-search");
   }, [navigate]);
 
-  const onContactUsTextClick = useCallback(() => {
-    const anchor = document.querySelector("[data-scroll-to='frameContainer']");
+  const onContactUsText2Click = useCallback(() => {
+    const anchor = document.querySelector("[data-scroll-to='contactUsContainer']");
     if (anchor) {
       anchor.scrollIntoView({ block: "start", behavior: "smooth" });
     }
@@ -78,7 +78,7 @@ const FindYourDoctor = () => {
         onHomeTextClick={onHomeTextClick}
         onAboutUsTextClick={onAboutUsTextClick}
         onHealthSupportTextClick={onHelpSupportTextClick}
-        onContactUsTextClick={onContactUsTextClick}
+        onContactUsText2Click={onContactUsText2Click}
         type="loc"
         forType="doctor"
       />
