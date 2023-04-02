@@ -4,7 +4,8 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { Rectangle } from "@react-google-maps/api";
 import Rectangle1  from "./images/rectangle1.png";
-
+import NavigationContainer from "./NavigationContainer";
+import { Button } from "@mui/material";
 
 const SearchContainer = ({
   searchNameText,
@@ -171,7 +172,8 @@ useEffect(()=>{
           style={sERVICE1Style}
           onClick={onSERVICEContainerClick}
         >
-          <div className="relative font-semibold" style={searchByService1Style}>
+          <div className="relative font-semibold" style={searchByService1Style}
+          onClick={onButtonSearchClick}>
             Search By Service
           </div>
         </div>
@@ -185,41 +187,55 @@ useEffect(()=>{
             alt=""
             src={Rectangle1}
           />
-          <button type="submit" onClick={(e)=> handleSubmit(e)} className="absolute top-[25px] left-[67px] font-medium flex items-center w-[87px] h-[19px]">
+          <button type="submit" onClick={(e)=> handleSubmit(e)} className="bg-red-100 absolute top-[25px] left-[54px] font-medium flex items-center w-[87px] h-[19px] text-5xl">
             Search
           </button>
         </div>
       </div>
+      
       <div
         className="absolute top-[40px] left-[619px] flex flex-row items-start justify-center gap-[24px] text-5xl text-red-100 font-cabin"
         style={navStyle}
       >
-        <div
-          className="relative font-semibold flex items-center justify-center w-[84px] shrink-0 [backdrop-filter:blur(4px)] cursor-pointer"
+       
+        <Button
+          className="relative  bg-red-100 font-semibold flex items-center justify-center w-[84px] shrink-0  cursor-pointer"
+          sx={{ width: 10 }}
+          variant="LINED"
+          color="error"
           onClick={onHomeTextClick}
         >
           Home
-        </div>
-        <div
-          className="relative font-semibold flex items-center justify-center w-[114px] shrink-0 [backdrop-filter:blur(4px)] cursor-pointer"
+        </Button>
+        <Button
+          className="relative  bg-red-100 font-semibold flex items-center justify-center w-[114px] shrink-0  cursor-pointer"
           onClick={onAboutUsTextClick}
+          sx={{ width: 140 }}
+          variant="LINED"
+          color="error"
         >
           About Us
-        </div>
-        <div
-          className="relative font-semibold flex items-center justify-center w-[182px] shrink-0 [backdrop-filter:blur(4px)] cursor-pointer"
+        </Button>
+        <Button
+          className="relative  bg-red-100 font-semibold flex items-center justify-center w-[182px] shrink-0 cursor-pointer"
           onClick={onHealthSupportTextClick}
           style={healthSupportStyle}
+          sx={{ width: 140 }}
+          variant="LINED"
+          color="error"
         >
           {healthSupportText}
-        </div>
-        <div
-          className="relative font-semibold flex items-center justify-center w-[137px] shrink-0 [backdrop-filter:blur(4px)] cursor-pointer"
+        </Button>
+        <Button
+          className="relative bg-red-100 font-semibold flex items-center justify-center w-[137px] shrink-0 cursor-pointer"
           onClick={onContactUsTextClick}
           style={contactUsStyle}
+          sx={{ width: 140 }}
+          variant="LINED"
+          color="error"
         >
           Contact Us
-        </div>
+        </Button>
       </div>
       <div className="absolute top-[27px] left-[90px] w-[167px] h-[54px] text-25xl text-gray-300">
         <div className="absolute top-[2px] left-[36px] font-semibold flex items-center justify-center w-7 h-[51px]">
@@ -228,7 +244,7 @@ useEffect(()=>{
         <div className="absolute top-[calc(50%_-_27px)] left-[calc(50%_-_83.5px)] font-semibold text-red-100">
           <span>Un</span>
           <span className="text-gray-300">eard</span>
-        </div>
+  </div>
       </div>
     </div>
   );

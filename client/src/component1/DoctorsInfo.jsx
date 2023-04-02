@@ -178,7 +178,7 @@ useEffect(()=>{
       </div>
       <FooterTextareaContainer2 />
       <div
-        className="absolute top-[626px] left-[491px] w-[298px] h-[58px] cursor-pointer text-center text-9xl text-white"
+        className="absolute top-[650px] left-[491px] w-[298px] h-[58px] cursor-pointer text-center text-9xl text-white"
         onClick={onBookContainerClick}
       >
         <div className="absolute top-[0px] left-[0px] rounded-sm bg-red-100 w-[298px] h-[58px]" />

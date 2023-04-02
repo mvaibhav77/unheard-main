@@ -17,7 +17,7 @@ const HealthSupportContainer = () => {
   }, [navigate]);
 
   const onHomeTextClick = useCallback(() => {
-    navigate("/");
+    navigate("/Home");
   }, [navigate]);
 
   const onAboutUsTextClick = useCallback(() => {

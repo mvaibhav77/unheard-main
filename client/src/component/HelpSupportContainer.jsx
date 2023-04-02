@@ -25,24 +25,24 @@ const HelpSupportContainer = () => {
 
   return (
     <div
-      className="absolute top-[1546.79px] left-[61px] w-[1224px] h-[977.79px] text-left text-5xl text-white font-montserrat"
+      className="relative top-[1546.79px] left-[61px] w-[1224px] h-[977.79px] text-left text-5xl text-white font-montserrat"
       data-scroll-to="land3Container"
     >
-      <div className="absolute top-[628.79px] left-[100px] w-[1043px] h-[349px]">
+      <div className="relative top-[628.79px] left-[0px] w-[1243px] h-[349px]">
       <img
-          className="relative w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
+          className="relative left-[50px] w-[350.68px] h-[350.4px] shrink-0 cursor-pointer"
             alt=""
           src = {Ngo}
           onClick={onRectangle9Click}
           />
          <img
-          className="relative w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
+          className="relative left-[50px] w-[350.68px] h-[350.4px] shrink-0 cursor-pointer"
             alt=""
           src = {Ngo}
           onClick={onRectangle9Click}
           />
          <img
-          className="relative w-[300.68px] h-[300.4px] shrink-0 cursor-pointer"
+          className="relative left-[50px] w-[350.68px] h-[350.4px] shrink-0 cursor-pointer"
             alt=""
           src = {Ngo}
           onClick={onRectangle9Click}

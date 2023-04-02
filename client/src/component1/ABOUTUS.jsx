@@ -6,6 +6,7 @@ import FooterTextareaContainer from "../component/FooterTextareaContainer";
 import ContributorsContainer from "../component/ContributorsContainer";
 import About from './images/about.png'
 import Ellipse from './images/ellipse.png'
+import { Button } from "@mui/material";
 
 const ABOUTUS = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const ABOUTUS = () => {
   }, [navigate]);
 
   const onNavContainerClick = useCallback(() => {
-    navigate("/find-your-doctor");
+    navigate("/");
   }, [navigate]);
 
   const onHomeText1Click = useCallback(() => {
@@ -53,21 +54,27 @@ const ABOUTUS = () => {
             </div>
           </div>
           <div
-            className="relative w-[201px] h-[29px] shrink-0 cursor-pointer text-5xl text-red-100 font-cabin"
+            className="relative w-[auto] h-[29px] shrink-0 cursor-pointer text-5xl text-red-100 font-cabin"
             onClick={onNavContainerClick}
           >
-            <div
-              className="absolute top-[0px] left-[0px] font-semibold [backdrop-filter:blur(4px)] cursor-pointer"
-              onClick={onHomeText1Click}
-            >
-              Home
-            </div>
-            <div
-              className="absolute top-[0px] left-[88px] font-semibold [backdrop-filter:blur(4px)] cursor-pointer"
-              onClick={onContactUsText2Click}
-            >
-              Contact Us
-            </div>
+            <Button
+          className="relative cursor-pointer"
+          sx={{ width: 80 }}
+          variant="LINED"
+          color="error"
+          onClick={onHomeText1Click}
+        >
+          Home
+        </Button>
+        <Button
+          className="relative cursor-pointer"
+          sx={{ width: 170 }}
+          variant="LINED"
+          color="error"
+          onClick={onContactUsText2Click}
+        >
+          Contact Us
+        </Button>
           </div>
         </div>
       </div>

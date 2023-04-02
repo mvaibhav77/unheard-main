@@ -22,7 +22,7 @@ const ContactForm = () => {
       </div>
       <div className="absolute top-[255px] left-[0px] w-[505px] h-[76px] flex flex-col items-start justify-start gap-[7px] text-left text-5xl text-black">
         <div className="relative font-semibold flex items-center w-[200px] h-[25px] shrink-0">{`Email - `}</div>
-        <div className="rounded-2xl bg-lavenderblush-200 w-[505px] h-11 shrink-0 flex flex-col py-0 px-[15px] box-border items-start justify-center">
+        <div className="rounded-2xl bg-lavenderblush-200 w-[505px] h-[70px] shrink-0 flex flex-col py-0 px-[15px] box-border items-start justify-center">
           <TextField
             className="relative"
             sx={{ width: 425 }}

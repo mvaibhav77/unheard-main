@@ -3,6 +3,16 @@ import { useCallback } from "react";
 import { Button } from "@mui/material";
 
 const NavigationContainer = () => {
+
+  const onHomeClick = useCallback(() => {
+    const anchor = document.querySelector("[data-scroll-to='landContainer']");
+    if (anchor) {
+      anchor.scrollIntoView({ block: "start", behavior: "smooth" });
+    }
+  }, []);
+
+
+
   const onAboutUsClick = useCallback(() => {
     const anchor = document.querySelector("[data-scroll-to='land2Container']");
     if (anchor) {
@@ -40,20 +50,20 @@ const NavigationContainer = () => {
 
   return (
     <div className="absolute top-[0px] left-[0px] w-[1139px] h-[54px] text-center text-xl text-red-100 font-cabin">
-      <div className="absolute top-[16px] left-[361px] flex flex-row items-start justify-start gap-[19px]">
+      <div className="absolute top-[16px] left-[361px] flex flex-row items-start justify-start gap-[19px]" >
         <Button
-          className="relative"
+          className="relative cursor-pointer"
           sx={{ width: 74 }}
-          variant="contained"
+          variant="lined"
           color="error"
-          href="/landing-page"
+          onClick={onHomeClick}
         >
           Home
         </Button>
         <Button
           className="relative cursor-pointer"
           sx={{ width: 106 }}
-          variant="contained"
+          variant="lined"
           color="error"
           onClick={onAboutUsClick}
         >
@@ -61,31 +71,40 @@ const NavigationContainer = () => {
         </Button>
         <Button
           className="relative cursor-pointer"
-          sx={{ width: 138 }}
-          variant="contained"
+          sx={{ width: 160 }}
+          variant="LINED"
           color="error"
           onClick={onHelpSupportClick}
         >
           Help Support
         </Button>
-        <div
-          className="relative font-semibold flex items-center justify-center w-[153px] shrink-0 [backdrop-filter:blur(4px)] cursor-pointer"
+        <Button
+          className="relative cursor-pointer"
+          sx={{ width: 160 }}
+          variant="LINED"
+          color="error"
           onClick={onHealthSupportText2Click}
         >
           Health Support
-        </div>
-        <div
-          className="relative font-semibold flex items-center justify-center w-[81px] shrink-0 [backdrop-filter:blur(4px)] cursor-pointer"
+        </Button>
+        <Button
+          className="relative cursor-pointer"
+          sx={{ width: 106 }}
+          variant="LINED"
+          color="error"
           onClick={onBlogsText2Click}
         >
-          Blogs
-        </div>
-        <div
-          className="relative font-semibold flex items-center justify-center w-[131px] shrink-0 [backdrop-filter:blur(4px)] cursor-pointer"
+          Blog
+        </Button>
+        <Button
+          className="relative cursor-pointer"
+          sx={{ width: 138 }}
+          variant="LINED"
+          color="error"
           onClick={onContactUsText2Click}
         >
           Contact Us
-        </div>
+        </Button>
       </div>
       <div className="absolute top-[0px] left-[0px] w-[167px] h-[54px] text-25xl text-gray-300 font-montserrat">
         <div className="absolute top-[2px] left-[36px] font-semibold flex items-center justify-center w-7 h-[51px]">
