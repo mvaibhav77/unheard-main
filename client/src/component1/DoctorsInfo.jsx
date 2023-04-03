@@ -164,9 +164,9 @@ useEffect(()=>{
           src={Ellipse}
         />
       </div>
-      <div className="absolute top-[472px] left-[386px] w-[509px] h-[122px] flex flex-col items-center justify-start gap-[12px] text-31xl">
+      <div className="relative top-[472px] left-[386px] w-[509px] h-[122px] flex flex-col items-center justify-start gap-[12px] text-31xl">
         <div className="relative font-semibold">{docName}</div>
-        <div className="relative text-21xl">{docDegree}</div>
+        <div className="relative left-[-140px] text-5xl">{docDegree}</div>
       </div>
       { <img
         className="absolute top-[1365px] left-[126px] w-[1027px] h-[770px] object-cover"
@@ -181,8 +181,8 @@ useEffect(()=>{
         className="absolute top-[650px] left-[491px] w-[298px] h-[58px] cursor-pointer text-center text-9xl text-white"
         onClick={onBookContainerClick}
       >
-        <div className="absolute top-[0px] left-[0px] rounded-sm bg-red-100 w-[298px] h-[58px]" />
-        <button className="absolute top-[12px] text-center left-[90px] bg-red-100 font-semibold" onClick={(e)=>{
+        <div className="absolute top-[0px] left-[50px] rounded-sm bg-red-100 w-[198px] h-[58px]" />
+        <button className="relative text-xl text-white top-[10px] text-center left-[0px] bg-red-100 font-semibold" onClick={(e)=>{
           window.location.replace('/video-call');
           e.preventDefault();
         }}>
