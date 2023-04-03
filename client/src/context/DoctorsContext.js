@@ -33,7 +33,7 @@ const ContextProvider = ({children})=>{
         let i=0;
         data.docs.forEach((doc)=>{
             // console.log(doc.data().Practicing)
-            if((i<5) && loc && doc.data().Practicing && ((doc.data().Practicing.toLowerCase().indexOf(query.toLowerCase()))!==-1) &&  (doc.data()['City'].toLowerCase().indexOf(loc.toLowerCase()) !== -1 || doc.data()['State'].toLowerCase().indexOf(loc.toLowerCase()) !== -1) ){
+            if((i<2) && loc && doc.data().Practicing && ((doc.data().Practicing.toLowerCase().indexOf(query.toLowerCase()))!==-1) &&  (doc.data()['City'].toLowerCase().indexOf(loc.toLowerCase()) !== -1 || doc.data()['State'].toLowerCase().indexOf(loc.toLowerCase()) !== -1) ){
                 console.log("found in locality");
                 docs.push({...doc.data(), id:doc.id})
                 i++;
@@ -41,7 +41,7 @@ const ContextProvider = ({children})=>{
         })
         data.docs.forEach((doc)=>{
             // console.log(doc.data().Practicing)
-            if((i<5) && doc.data().Practicing && ((doc.data().Practicing.toLowerCase().indexOf(query.toLowerCase()))!==-1)){
+            if((i<2) && doc.data().Practicing && ((doc.data().Practicing.toLowerCase().indexOf(query.toLowerCase()))!==-1)){
                 console.log("found but not in locality");
                 docs.push({...doc.data(), id:doc.id})
                 i++;
@@ -74,7 +74,7 @@ const ContextProvider = ({children})=>{
         const data = await getDocs(DoctorCollectionRef);
         let i=0;
         data.docs.forEach((doc)=>{
-            if((i<5) && doc.data()['City'] && (((doc.data()['City'].toLowerCase()).indexOf(query.toLowerCase())!==-1) || ((doc.data()['State'].toLowerCase()).indexOf(query.toLowerCase())!==-1))){
+            if((i<2) && doc.data()['City'] && (((doc.data()['City'].toLowerCase()).indexOf(query.toLowerCase())!==-1) || ((doc.data()['State'].toLowerCase()).indexOf(query.toLowerCase())!==-1))){
                 console.log("found");
                 docs.push({...doc.data(), id:doc.id})
                 i++;
