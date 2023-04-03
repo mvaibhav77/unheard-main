@@ -63,7 +63,7 @@ const HeaderContainer = () => {
             alt=""
             src={Rectangle}
           />
-          <div className="absolute top-[25px] left-[67px] font-medium flex items-center w-[87px] h-[19px]">
+          <div className="absolute top-[25px] left-[7px] font-medium flex items-center w-[87px] h-[19px]">
             Search
           </div>
         </div>

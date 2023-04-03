@@ -57,7 +57,7 @@ const LandingPage = () => {
         </div>
           <div className="relative left-[50px] rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 border-[0.8px] border-solid border-red-100" >
           <img
-        className="relative rounded-lg flex flex-center top-[5px] left-[6px] w-[300px] h-[175px]" 
+        className="relative rounded-md flex flex-center top-[5px] left-[6px] w-[300px] h-[175px]" 
         alt="" 
         src={Ngoblog}
         />

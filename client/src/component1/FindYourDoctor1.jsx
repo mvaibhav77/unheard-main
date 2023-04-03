@@ -69,7 +69,7 @@ const HealthSupportContainer = () => {
         sERVICELeft="26px"
         searchByServiceBackgroundColor="#d70908"
         searchByServiceCursor="unset"
-        buttonSearchColor="#fff"
+        buttonSearchColor=""
         rectangle43Cursor="pointer"
         homeJustifyContent="flex-start"
         contactUsWidth="171px"
