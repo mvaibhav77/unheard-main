@@ -141,7 +141,9 @@ useEffect(()=>{
 
   return (
     <div className="relative bg-lightpink [backdrop-filter:blur(4px)] box-border w-[1280.8px] h-[342.8px] shrink-0 text-center text-mid text-white font-montserrat border-[0.8px] border-solid border-red-100">
+      
       <div className="absolute top-[149px] left-[173px] w-[933px] h-[147px] text-left">
+     
       <input type='text' value={query}  onChange={(e)=>handleChange(e)}  className="absolute top-[53px] left-[0px] rounded-3041xl box-border w-[607px] h-[94px] border-[15px] border-solid border-red-100 bg-white w-[607px] h-[94px]"
         />
         <div
@@ -201,7 +203,7 @@ useEffect(()=>{
       >
        
         <Button
-          className="relative  bg-red-100 font-semibold flex items-center justify-center w-[84px] shrink-0  cursor-pointer"
+          className="relative  bg-red-100  flex items-center justify-center w-[84px] shrink-0  cursor-pointer"
           sx={{ width: 10 }}
           variant="LINED"
           color="error"
@@ -210,7 +212,7 @@ useEffect(()=>{
           Home
         </Button>
         <Button
-          className="relative  bg-red-100 font-semibold flex items-center justify-center w-[114px] shrink-0  cursor-pointer"
+          className="relative  bg-red-100 flex items-center justify-center w-[114px] shrink-0  cursor-pointer"
           onClick={onAboutUsTextClick}
           sx={{ width: 140 }}
           variant="LINED"
@@ -219,7 +221,7 @@ useEffect(()=>{
           About Us
         </Button>
         <Button
-          className="relative  bg-red-100 font-semibold flex items-center justify-center w-[182px] shrink-0 cursor-pointer"
+          className="relative  bg-red-100 flex items-center justify-center w-[182px] shrink-0 cursor-pointer"
           onClick={onHealthSupportTextClick}
           style={healthSupportStyle}
           sx={{ width: 140 }}
@@ -229,7 +231,7 @@ useEffect(()=>{
           {healthSupportText}
         </Button>
         <Button
-          className="relative bg-red-100 font-semibold flex items-center justify-center w-[137px] shrink-0 cursor-pointer"
+          className="relative bg-red-100  flex items-center justify-center w-[137px] shrink-0 cursor-pointer"
           onClick={onContactUsTextClick}
           style={contactUsStyle}
           sx={{ width: 140 }}
