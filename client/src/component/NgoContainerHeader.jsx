@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useMemo } from "react";
+import Rectangle from './images/rectangle.png'
 
 const SearchContainer = ({
   searchNameText,
@@ -123,7 +124,7 @@ const SearchContainer = ({
         <img
           className="absolute top-[53px] left-[0px] w-[51px] h-3.5"
           alt=""
-          src="/rectangle-40.svg"
+          src={Rectangle}
         />
         <div
           className="absolute top-[53px] left-[0px] rounded-t-none rounded-br-none rounded-bl-sm bg-red-100 w-[13px] h-[50px]"
