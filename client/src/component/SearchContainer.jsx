@@ -160,8 +160,12 @@ useEffect(()=>{
           style={rectangleDiv5Style}
         />
         <div
-          className="absolute top-[20px] left-[36px] font-semibold text-red-100"
+          className="absolute top-[20px] left-[36px] font-semibold text-red-100 cursor-pointer"
           style={searchByNameStyle}
+          onClick={(e)=>{
+            e.preventDefault();
+            window.location.replace('/ngo-search')
+          }}
         >
           {searchNameText}
         </div>
@@ -177,15 +181,15 @@ useEffect(()=>{
         </div>
         <div
           className="absolute top-[66px] left-[719px] w-[221px] h-[69px] cursor-pointer text-6xl"
-          onClick={onButtonSearchClick}
           style={buttonSearchStyle}
+          onClick={(e)=> handleSubmit(e)}
         >
           <img
             className="absolute top-[0px] left-[0px] rounded-3041xl w-[221px] h-[69px]"
             alt=""
             src={Rectangle1}
           />
-          <button type="submit" onClick={(e)=> handleSubmit(e)} className="bg-red-100 absolute top-[25px] left-[54px] font-medium flex items-center w-[87px] h-[19px] text-5xl">
+          <button type="submit" className="bg-red-100 absolute top-[25px] left-[54px] cursor-pointer font-medium flex items-center w-[87px] h-[19px] text-5xl">
             Search
           </button>
         </div>
