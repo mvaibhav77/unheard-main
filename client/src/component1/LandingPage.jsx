@@ -40,7 +40,7 @@ const LandingPage = () => {
         3 Daily Habits That Will Positively Affect and Protect Your Mental Health Starting simple with daily habits can work wonders in improving your mental health.
         </div>
         <a href="https://gc4women.org/category/gc4w-womens-health-and-wellness/?gclid=CjwKCAjwrJ-hBhB7EiwAuyBVXd_LCwI_8W4oVlqFww-pA3zGzIYdYdCRZtYwZm9FJ0vh1BAXX-7FaRoCEtUQAvD_BwE"  >
-        <button className=" relative top-7 bg-red-100  "> Read More </button>
+        <button className=" relative top-7  rounded-sm h-8 bg-red-100  "> Read More </button>
         </a>
           </div>
           <div className="relative left-[50px] rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 border-[0.8px] border-solid border-red-100" >
@@ -52,7 +52,7 @@ const LandingPage = () => {
         <div className="relative top-5">
         In the last few years, the level of safety of women is constantly falling. The reason behind this is the continuing increase in crime.  </div>
         <a href="https://www.iilsindia.com/blogs/women-safety/"  >
-        <button className=" relative top-12 bg-red-100  "> Read More </button>
+        <button className=" relative  rounded-sm h-8 top-12 bg-red-100  "> Read More </button>
         </a>
         </div>
           <div className="relative left-[50px] rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 border-[0.8px] border-solid border-red-100" >
@@ -64,7 +64,7 @@ const LandingPage = () => {
         <div className="relative top-5">
         My life always consisted of struggles, which I face even today but I have risen from the ashes and continue to fight every day - Shahjahan Mirza </div>        
         <a href="http://coroindia.org/blog/my-life-always-consisted-of-struggles-which-i-face-even-today-but-i-have-risen-from-the-ashes-and-continue-to-fight-every-day-shahjahan-mirza"  >
-        <button className=" relative top-7 bg-red-100  "> Read More </button>
+        <button className=" relative rounded-sm h-8 top-7 bg-red-100  "> Read More </button>
         </a>
         </div>
         </div>
