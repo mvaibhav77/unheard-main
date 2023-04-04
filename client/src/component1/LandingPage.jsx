@@ -52,7 +52,7 @@ const LandingPage = () => {
         <div className="relative top-5">
         In the last few years, the level of safety of women is constantly falling. The reason behind this is the continuing increase in crime.  </div>
         <a href="https://www.iilsindia.com/blogs/women-safety/"  >
-        <button className=" relative  rounded-sm h-8 top-12 bg-red-100 text-lavenderblush-200 "> Read More </button>
+        <button className=" relative  rounded-sm h-8 top-12 bg-red-100  text-lavenderblush-200"> Read More </button>
         </a>
         </div>
           <div className="relative left-[50px] rounded-lg bg-lightpink [backdrop-filter:blur(4px)] box-border w-[313.8px] h-[349.8px] shrink-0 border-[0.8px] border-solid border-red-100" >
@@ -64,7 +64,7 @@ const LandingPage = () => {
         <div className="relative top-5">
         My life always consisted of struggles, which I face even today but I have risen from the ashes and continue to fight every day - Shahjahan Mirza </div>        
         <a href="http://coroindia.org/blog/my-life-always-consisted-of-struggles-which-i-face-even-today-but-i-have-risen-from-the-ashes-and-continue-to-fight-every-day-shahjahan-mirza"  >
-        <button className=" relative rounded-sm h-8 top-7 bg-red-100 text-lavenderblush-200 "> Read More </button>
+        <button className=" relative rounded-sm  h-8 top-7 bg-red-100  text-lavenderblush-200"> Read More </button>
         </a>
         </div>
         </div>
