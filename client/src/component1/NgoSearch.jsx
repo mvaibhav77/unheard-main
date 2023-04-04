@@ -97,7 +97,7 @@ const NgoSearch = () => {
           {randomThreeNgo && randomThreeNgo.map((ngo)=>{
             return (
               <div
-            className="relative rounded-lg bg-lightpink  flex justify-center text-5xl box-border w-[313.8px] h-[349.8px] shrink-0 cursor-pointer border-[0.8px] border-solid border-red-100"
+            className="relative rounded-lg bg-lightpink text-center text-5xl box-border w-[313.8px] h-[349.8px] shrink-0 cursor-pointer border-[0.8px] border-solid border-red-100"
             onClick={()=>{
               window.location.replace('/ngo-details?id='+ngo.id)
             }}
